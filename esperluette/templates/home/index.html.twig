@@ -4,13 +4,130 @@
 
 {% block body %}
 
-<div class="container center-align test">
-<h1> Bienvenue sur mon site </h1>
-
+<div class="container center-align">
+    <img class="logo" src="{{ asset('/images/logo.png') }}" alt="">
+    <h1> Esperluette </h1>
+    <h2> Revalorisation d'objets anciens </h2>
+    <div class="divider"></div>
 </div>
-    
 
-<h2>Essai image</h2>
-   <img src="{{ asset('/images/logo.png') }}" alt="">
+<div class="container">
+    <div class="row">
+        <nav class="navigation">
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href=""><i class="fas fa-home fa-sm"></i></a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Boutique</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li> <a href=""> <i class="fab fa-facebook-f fa-sm"></i> </a> </li>
+                    <li> <a href="https://www.instagram.com/esperluettevalorisation/"> <i
+                                class="fab fa-instagram fa-sm"></i> </a> </li>
+                    <li> <a href="https://www.pinterest.fr/nallet0387/"> <i class="fab fa-pinterest-p fa-sm"></i>
+                        </a>
+                    </li>
+                    <!-- <li> <a href=""> Recherche </a> </li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="row">
+    <div class="carousel carousel-slider">
+        <a href="#one!" class="carousel-item"><img src="images/1.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="images/2.jpg"></a>
+        <a class="carousel-item" href="#three!"><img src="images/3.jpg"></a>
+        <a class="carousel-item" href="#four!"><img src="images/4.jpg"></a>
+        <!-- <a class="carousel-item" href="#five!"><img src="#"></a> -->
+    </div>
+    <div class="row center-align">
+        <div class="btn btn_commande waves-effect prev">
+            <i class="fas fa-chevron-left fa-sm"> </i>
+            <span class="text_commande"> Précédent </span>
+        </div>
+        |
+        <div class="btn btn_commande waves-effect next">
+            <span class="text_commande"> Suivant </span>
+            <i class="fas fa-chevron-right fa-sm"></i>
+        </div>
+    </div>
+</div>
+
+<div class="container presentation">
+    <div class="row">
+        <div class=" col s12 m6">
+            <div class="row">
+                <div class=" col s12 m6">
+                    <div class="square">
+                        <img src="images/bebe.png" alt="#">
+                    </div>
+                </div>
+                <div class=" col s12 m6">
+                    <div class="square one">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col s12 m6">
+                    <div class="square two">
+                    </div>
+                </div>
+                <div class=" col s12 m6">
+                    <div class="square three valign-wrapper">
+                        <div class="para"> Depuis toute petite je bidouille des machins choses pour en faire des
+                            trucs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col s12 m6">
+            <div class="bigSquare">
+                <img src="images/tableau.png" alt="#">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <h3 class="center-align">
+                Comment est née Esperluette ?
+            </h3>
+        </div>
+        <div class=" col s12 m6 bordure">
+            <p>
+                « Mon entreprise se nomme ESPERLUETTE, ce mot vous est peut- être inconnu, mais je suis certaine que
+                vous en connaissez
+                le graphisme : c’est cette & si difficile à tracer sans se concentrer ! alors pourquoi ce nom...
+                <br>
+                Tout d’abord parce qu’elle & moi on se ressemble physiquement : toutes en courbes et en rondeurs. Et
+                qu’elle me rappelle
+                le signe infini ∞ évoquant que rien n’a une fin et que tout est multiple : elle est le signe de mes
+                nombreuses facettes
+                parce que je sais faire du décoratif & du pratique & du ludique & du décalé... Que j’aime chiner &
+                bricoler & inventer &
+                recycler & reproduire & imaginer...
+            </p>
+        </div>
+        <div class=" col s12 m6">
+            <p>
+                Que je me sens d’ici & d’ailleurs, de maintenant & d’autrefois. <br>
+                Que je suis dynamique & manuelle & atypique & curieuse, bref plurielle donc mes créations le sont
+                aussi. <br>
+                Je ne fabrique que des pièces uniques & différentes à chaque fois car elles sont l’expression d’un
+                instant, d’un
+                sentiment ou d’une idée, tous plus fugaces les uns que les autres. <br>
+                J’aime les brocantes, la calligraphie, le design, le style industriel, les cabinets de curiosités,
+                la nature et des
+                milliards de choses. Je me sens écoresponsable et redevable envers ma planète. »
+            </p>
+        </div>
+        <div class="col s12">
+            <h6 class="center-align"> Bienvenue dans le petit monde d’ESPERLUETTE réanimation d’objets désuets.
+            </h6>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
