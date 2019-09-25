@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="fr-FR">
 
 <head>
     <!--***** META *****-->
@@ -19,8 +20,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
     <!-- Style sheet Perso -->
-    <link rel="stylesheet" href="{{ asset('/css/style.css')}}" type="text/css">
-    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset('/css/main.css')}}" type="text/css">
+    {% block stylesheets %} {% endblock %}
     <!--***** TITLE *****-->
     <title> & |  {% block title %}{% endblock %} </title>
 </head>
@@ -29,7 +30,7 @@
     <div class="row navbar-fixed">
         <nav class="navigation">
             <div class="nav-wrapper">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul class="right">
                     <li> <a href=""> <i class="fas fa-shopping-basket fa-sm"></i> Panier </a> </li>
                     <li> <a href="#"> <i class="fas fa-sign-in-alt fa-sm"></i> Connexion </a> </li>
                 </ul>

@@ -1,47 +1,22 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/home.css')}}" type="text/css">
+{% endblock %}
+
 {% block title %} Home {% endblock %}
 
 {% block body %}
 
-<div class="container center-align">
-    <img class="logo" src="{{ asset('/images/logo.png') }}" alt="">
-    <h1> Esperluette </h1>
-    <h2> Revalorisation d'objets anciens </h2>
-    <div class="divider"></div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <nav class="navigation">
-            <div class="nav-wrapper">
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href=""><i class="fas fa-home fa-sm"></i></a></li>
-                    <li><a href="">Blog</a></li>
-                    <li><a href="">Boutique</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li> <a href=""> <i class="fab fa-facebook-f fa-sm"></i> </a> </li>
-                    <li> <a href="https://www.instagram.com/esperluettevalorisation/"> <i
-                                class="fab fa-instagram fa-sm"></i> </a> </li>
-                    <li> <a href="https://www.pinterest.fr/nallet0387/"> <i class="fab fa-pinterest-p fa-sm"></i>
-                        </a>
-                    </li>
-                    <!-- <li> <a href=""> Recherche </a> </li> -->
-                </ul>
-            </div>
-        </nav>
-    </div>
-</div>
+{% include "includes/header.html.twig" %}
 
 <div class="row">
     <div class="carousel carousel-slider">
-        <a href="#one!" class="carousel-item"><img src="images/1.jpg"></a>
-        <a class="carousel-item" href="#two!"><img src="images/2.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="images/3.jpg"></a>
-        <a class="carousel-item" href="#four!"><img src="images/4.jpg"></a>
-        <!-- <a class="carousel-item" href="#five!"><img src="#"></a> -->
+        <a class="carousel-item" href="#one!"><img src="images/1.jpg" alt="image"></a>
+        <a class="carousel-item" href="#two!"><img src="images/2.jpg" alt="image"></a>
+        <a class="carousel-item" href="#three!"><img src="images/3.jpg" alt="image"></a>
+        <a class="carousel-item" href="#four!"><img src="images/4.jpg" alt="image"></a>
+        <!-- <a class="carousel-item" href="#five!"><img src="#" alt="image"></a> -->
     </div>
     <div class="row center-align">
         <div class="btn btn_commande waves-effect prev">

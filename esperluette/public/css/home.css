@@ -30,26 +30,6 @@ h6 {
     font-size: 18px;
 }
 
-.navigation {
-    box-shadow: none;
-    background-color: white;
-}
-
-.navigation li a {
-    font-family: 'Special Elite',
-        cursive;
-    color: black;
-}
-
-.navigation li a .fab,
-.navigation li a .fas {
-    color: gray;
-}
-
-.test {
-    border: 1px solid black;
-}
-
 .carousel {
     height: 600px;
 }

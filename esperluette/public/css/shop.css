@@ -1,0 +1,60 @@
+h1 {
+    font-family: 'Special Elite',
+        cursive;
+    margin: 30px 0 10px 0;
+    font-size: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0px;
+}
+
+.category li a {
+ font-size: 12px;
+ margin-left : 20px;
+}
+
+li {
+    font-family: 'Special Elite',
+    cursive;
+}
+
+.category li>a:hover {
+    background-color: white;
+    color: gray;
+}
+.panier {
+    margin-left: 100px;
+}
+
+.list a {
+    color: black;
+}
+
+.list img {
+    padding: 10px 10px;
+    width: 200px;
+    height: 300px;
+}
+
+.titleCard {
+    font-family: 'Special Elite', cursive;
+    font-size: 18px;
+}
+
+.card-content p {
+    font-family: 'Poiret One',
+    cursive;
+}
+
+.comeBack {
+    margin: 0 30px 0 0;
+    font-family: 'Special Elite',
+    cursive;
+}
+
+.comeBack .far:hover {
+    color: #18202d;
+}
