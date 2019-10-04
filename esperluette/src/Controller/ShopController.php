@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class ShopController extends AbstractController
 {
     /**
@@ -16,11 +17,11 @@ class ShopController extends AbstractController
             'controller_name' => 'ShopController',
         ]);
     }
-    
+
     /**
-     * @Route("/article", name="article")
+     * @Route("/article", name="article") //@Route("/article/{id}", name="article")
      */
-    public function article()
+    public function article(/*$id*/)
     {
         return $this->render('shop/article.html.twig', [
             'controller_name' => 'ShopController'

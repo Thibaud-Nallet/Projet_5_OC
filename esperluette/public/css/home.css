@@ -34,9 +34,15 @@ h6 {
     height: 600px;
 }
 
-.carousel img {
-    height: 100%;
+.carousel .carousel-item {
+    width: 400px;
+    height: 500px;
+}
+
+.carousel-item img {
+    margin-bottom: 100px;
     width: 100%;
+    height: 100%;
 }
 
 .btn_commande {
@@ -65,26 +71,24 @@ h6 {
     color: gray;
 }
 
-.presentation .square {
-    height: 225px;
+.presentation {
+    margin-top: 40px;
 }
 
-.square img,
-.bigSquare img {
-    width: 100%;
-    height: 100%;
+.presentation .card {
+    height: 250px;
+    width: 200px;
 }
 
-.presentation .one {
-    background-color: #a8cdd7;
-}
-
-.presentation .two {
-    background-color: #e8b7b7;
+.bebe {
+    height: 250px;
+    width: 200px;
 }
 
 .presentation .three {
     background-color: #c0beaf;
+    width: 100%;
+    height: 100%;
 }
 
 .presentation .three .para {
@@ -92,11 +96,6 @@ h6 {
     font-size: 18px;
     font-family: 'Poiret One',
         cursive;
-}
-
-.presentation .bigSquare {
-    margin: 40px 0px 0 60px;
-    height: 375px;
 }
 
 .presentation p {
@@ -107,5 +106,5 @@ h6 {
 }
 
 .bordure {
-    border-right: #a8cdd7 solid 2px;
+    border-right: silver solid 1px;
 }

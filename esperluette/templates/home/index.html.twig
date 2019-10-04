@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('/css/home.css')}}" type="text/css">
+<link rel="stylesheet" href="{{ asset('/css/home.css') }}" type="text/css">
 {% endblock %}
 
 {% block title %} Home {% endblock %}
@@ -10,14 +10,33 @@
 
 {% include "includes/header.html.twig" %}
 
-<div class="row">
-    <div class="carousel carousel-slider">
-        <a class="carousel-item" href="#one!"><img src="images/1.jpg" alt="image"></a>
-        <a class="carousel-item" href="#two!"><img src="images/2.jpg" alt="image"></a>
-        <a class="carousel-item" href="#three!"><img src="images/3.jpg" alt="image"></a>
-        <a class="carousel-item" href="#four!"><img src="images/4.jpg" alt="image"></a>
-        <!-- <a class="carousel-item" href="#five!"><img src="#" alt="image"></a> -->
+<div class="container_caroussel">
+    <div class="row">
+        <div class="carousel">
+
+            <div class="carousel-item">
+                <img src="images/2.jpg" alt="image">
+            </div>
+            <div class="carousel-item">
+                <img src="images/3.jpg" alt="image">
+            </div>
+            <div class="carousel-item">
+                <img src="images/4.jpg" alt="image">
+            </div>
+            <div class="carousel-item">
+                <img src="images/5.jpg" alt="image">
+            </div>
+            <div class="carousel-item">
+                <img src="images/6.jpg" alt="image">
+            </div>
+            <div class="carousel-item">
+                <img src="images/7.jpg" alt="image">
+            </div>
+        </div>
+        <div class="container divider"> </div>
     </div>
+
+    <!--
     <div class="row center-align">
         <div class="btn btn_commande waves-effect prev">
             <i class="fas fa-chevron-left fa-sm"> </i>
@@ -28,42 +47,33 @@
             <span class="text_commande"> Suivant </span>
             <i class="fas fa-chevron-right fa-sm"></i>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <div class="container presentation">
     <div class="row">
-        <div class=" col s12 m6">
-            <div class="row">
-                <div class=" col s12 m6">
-                    <div class="square">
-                        <img src="images/bebe.png" alt="#">
-                    </div>
-                </div>
-                <div class=" col s12 m6">
-                    <div class="square one">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class=" col s12 m6">
-                    <div class="square two">
-                    </div>
-                </div>
-                <div class=" col s12 m6">
-                    <div class="square three valign-wrapper">
-                        <div class="para"> Depuis toute petite je bidouille des machins choses pour en faire des
-                            trucs</div>
+        <div class="col s offset-s2 m6 offset-m4 l6">
+            <div class="col s12 l6 offset-l6">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img class="bebe" src="images/bebe.png" alt="#">
                     </div>
                 </div>
             </div>
         </div>
-        <div class=" col s12 m6">
-            <div class="bigSquare">
-                <img src="images/tableau.png" alt="#">
+        <div class="col s6 offset-s2 m6 offset-m4 l6">
+            <div class="col s12 l6">
+                <div class="card hoverable">
+                    <div class="card-image three valign-wrapper">
+                        <div class="para"> Depuis toute petite je bidouille des machins choses pour en faire des
+                            trucs
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col s12">
             <h3 class="center-align">

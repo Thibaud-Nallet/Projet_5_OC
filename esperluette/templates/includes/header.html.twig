@@ -10,12 +10,12 @@
         <nav class="navigation">
             <div class="nav-wrapper">
                 <ul class="left">
-                    <li><a href="/"><i class="fas fa-home fa-sm"></i></a></li>
-                    <li><a href="">Blog</a></li>
-                    <li><a href="/shop">Boutique</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="{{ path('home') }}"><i class="fas fa-home fa-sm"></i></a></li>
+                    <li><a href="{{ path('shop') }}">Blog</a></li>
+                    <li><a href="{{ path('shop') }}">Boutique</a></li>
+                    <li><a href="{{ path('shop') }}">Contact</a></li>
                 </ul>
-                <ul class="right">
+                <ul class="right hide-on-small-only">
                     <li> <a href=""> <i class="fab fa-facebook-f fa-sm"></i> </a> </li>
                     <li> <a href="https://www.instagram.com/esperluettevalorisation/"> <i
                                 class="fab fa-instagram fa-sm"></i> </a> </li>
