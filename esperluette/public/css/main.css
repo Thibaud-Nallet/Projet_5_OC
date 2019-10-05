@@ -2,6 +2,26 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    font-family: 'Poiret One',
+        cursive;
+    margin-top: 0px;
+}
+
+h2 {
+    font-family: 'Special Elite',
+        cursive;
+    margin-top: 0px;
+    font-size: 18px;
+}
+
+
+
+h6 {
+    font-family: 'Poiret One',
+        cursive;
+    font-size: 18px;
+}
 .navigation {
     box-shadow: none;
     background-color: white;
@@ -18,6 +38,22 @@ body {
     color: gray;
 }
 
+.logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 0px;
+}
+
 .test {
     border: 1px solid black;
+}
+
+.comeBack a {
+    font-family: 'Poiret One', cursive;
+}
+.comeBack .fa-times-circle {
+    color: #18202d;
+}
+.btn-floating {
+    box-shadow: none;
 }

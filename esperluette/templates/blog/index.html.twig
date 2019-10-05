@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/blog.css') }}" type="text/css">
+{% endblock %}
+
+{% block title %} Blog {% endblock %}
+
+{% block body %}
+
+{% include "includes/header.html.twig" %}
+
+
+<div class="container">
+    <section class="articles">
+        <div class="row">
+            <div class="col s12">
+                <div class="card grey lighten-5">
+                    <div class="card-content">
+                        <h3 class="center-align"> Bienvenue sur mon blog </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% for article in articles %}
+        <article>
+            <h4>{{ article.title }}</h4>
+            <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à
+                {{ article.createdAt | date('H:i') }} dans la catégorie Politique</div>
+            <div class="content">
+                <img src="{{ article.image }}" alt="">
+                {{ article.content | raw }}
+                <a href="{{ path("blog_show", {'id' : article.id}) }}" class="btn waves-effect waves-light">Lire la suite</a>
+            </div>
+        </article>
+        {% endfor %}
+
+
+    </section>
+
+
+</div>{% endblock %}

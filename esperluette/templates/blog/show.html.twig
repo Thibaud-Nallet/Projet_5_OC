@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/blog.css') }}" type="text/css">
+{% endblock %}
+
+{% block title %} Blog {% endblock %}
+
+{% block body %}
+
+{% include "includes/header.html.twig" %}
+<div class="container center-align">
+    <div class="comeBack right-align"> 
+        <a class="btn-floating white hoverable btn tooltipped" data-position="left" data-tooltip="Revenir au blog"
+            href="/blog">
+            <i class="far fa-times-circle fa-lg"></i> 
+        </a>
+    </div>
+    <article>
+        <h4>{{ article.title }}</h4>
+        <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à
+            {{ article.createdAt | date('H:i') }} dans la catégorie Politique</div>
+        <div class="content">
+            <img src="{{ article.image }}" alt="">
+            {{ article.content | raw }}
+        </div>
+    </article>
+</div>
+{% endblock %}

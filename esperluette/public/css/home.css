@@ -1,35 +1,9 @@
-.logo {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 0px;
-}
-
-h1 {
-    font-family: 'Poiret One',
-        cursive;
-    margin-top: 0px;
-}
-
-h2 {
-    font-family: 'Special Elite',
-        cursive;
-    margin-top: 0px;
-    font-size: 18px;
-}
-
 h3 {
     font-family: 'Poiret One',
         cursive;
     margin-top: 0px;
     color: #b0ccb0;
 }
-
-h6 {
-    font-family: 'Poiret One',
-        cursive;
-    font-size: 18px;
-}
-
 .carousel {
     height: 600px;
 }
