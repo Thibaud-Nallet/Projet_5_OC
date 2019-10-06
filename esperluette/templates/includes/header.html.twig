@@ -10,8 +10,12 @@
         <nav class="navigation">
             <div class="nav-wrapper">
                 <ul class="left">
-                    <li><a href="{{ path('home') }}"><i class="fas fa-home fa-sm"></i></a></li>
-                    <li><a href="{{ path('blog') }}">Blog</a></li>
+                    <li {% if app.request.attributes.get('_route') == 'home' %}class="active" {% endif %}>
+                        <a href="{{ path('home') }}"><i class="fas fa-home fa-sm"></i></a>
+                    </li>
+                    <li {% if app.request.attributes.get('_route') == 'blog' %}class="active"{% endif %}>
+                        <a href="{{ path('blog') }}">Blog</a>
+                    </li>
                     <li><a href="{{ path('shop') }}">Boutique</a></li>
                     <li><a href="{{ path('shop') }}">Contact</a></li>
                 </ul>
