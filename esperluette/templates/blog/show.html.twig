@@ -9,7 +9,7 @@
 {% block body %}
 
 {% include "includes/header.html.twig" %}
-<div class="container center-align">
+<div class="center-align">
     <div class="comeBack right-align"> 
         <a class="btn-floating white hoverable btn tooltipped" data-position="left" data-tooltip="Revenir au blog"
             href="/blog">
@@ -19,11 +19,27 @@
     <article>
         <h4>{{ article.title }}</h4>
         <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à
-            {{ article.createdAt | date('H:i') }} dans la catégorie Politique</div>
+            {{ article.createdAt | date('H:i') }} dans la catégorie {{ article.categoryBlog.title }}</div>
         <div class="content">
             <img src="{{ article.image }}" alt="">
             {{ article.content | raw }}
         </div>
     </article>
+
+    <section class="commentaires">
+        {% for comment in article.commentsBlog %}
+        <div class="comment">
+            <div class="row">
+                <div class="col s3">
+                    {{ comment.author }}
+                    (<small> {{ comment.createdAt | date('d/m/Y à H:i') }} </small>)
+                </div>
+                <div class="col s9">
+                    {{ comment.content | raw }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
 </div>
 {% endblock %}

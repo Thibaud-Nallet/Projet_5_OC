@@ -12,12 +12,8 @@ $(document).ready(function () {
     $('.next').click(() => {
         $('.carousel').carousel('next');
     })
-});
 
-$(document).ready(function () {
     $('.sidenav').sidenav();
-});
-
-$(document).ready(function () {
     $('.tooltipped').tooltip();
+    $('select').formSelect();
 });

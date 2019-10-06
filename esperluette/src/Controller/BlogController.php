@@ -34,9 +34,6 @@ class BlogController extends AbstractController
         if(!$article) {
             $article = new ArticlesBlog;
         }
-    
-        //$article->setTitle("")
-            //->setContent("");
 
         //Crée les champs du form à afficher dans twig
         $form = $this->createForm(ArticleType::class, $article);
@@ -52,7 +49,6 @@ class BlogController extends AbstractController
                 //Donne une date 
             $article->setCreatedAt(new \DateTime());
             }
-            
             //Envoye à la bdd
             $manager->persist($article);
             $manager->flush();
