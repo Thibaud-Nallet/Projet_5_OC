@@ -1,0 +1,48 @@
+
+.separateArticle {
+    background-color: silver;
+    height: 60px;
+}
+
+.container_articles {
+    background-color: silver;
+    
+}
+
+.articles {
+    background-color: white;
+    padding: 20px 40px;
+}
+
+h3 {
+    font-family: 'Poiret One',
+    cursive;
+    font-size: 20px;
+}
+
+.metadata {
+    font-family: 'Special Elite',
+    cursive;
+    font-size: 10px;
+    font-style: italic;
+}
+.p_content{
+    padding-top: 10px;
+    font-family: 'Special Elite',
+    cursive;
+    font-size: 14px;
+}
+
+.read_more {
+     padding: 20px 0 0 20px;
+}
+
+.read_more a{
+    color: black;
+    font-family: 'Poiret One', cursive;
+    font-size: 16px;
+}
+
+.read_more a:hover {
+    text-decoration: underline; 
+}

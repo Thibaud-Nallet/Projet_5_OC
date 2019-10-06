@@ -19,7 +19,8 @@
     <article>
         <h4>{{ article.title }}</h4>
         <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à
-            {{ article.createdAt | date('H:i') }} dans la catégorie {{ article.categoryBlog.title }}</div>
+            {{ article.createdAt | date('H:i') }} dans la catégorie {{ article.categoryBlog.title }}
+        </div>
         <div class="content">
             <img src="{{ article.image }}" alt="">
             {{ article.content | raw }}
