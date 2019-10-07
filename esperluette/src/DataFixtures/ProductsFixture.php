@@ -17,7 +17,7 @@ class ProductsFixture extends Fixture
         for ($i = 1; $i < 30; $i++) {
             $product = new ProductShop();
             $title = $faker->sentence();
-            $coverImage = $faker->imageUrl(1000,350);
+            $coverImage = $faker->imageUrl();
             $introduction = $faker->paragraph(2);
             $content = '<p>' . join($faker->paragraphs(5), '</p><p>') . '</p>';
 

@@ -2,29 +2,35 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\ProductShop;
+use App\Repository\ProductShopRepository;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 class ShopController extends AbstractController
 {
     /**
-     * @Route("/shop", name="shop")
+     * @Route("/shop", name="product_index")
      */
-    public function index()
+    public function shop(ProductShopRepository $repo)
     {
-        return $this->render('shop/index.html.twig', [
-            'controller_name' => 'ShopController',
+        $products = $repo->findAll();
+        return $this->render('shop/shop.html.twig', [
+            'products' => $products
         ]);
     }
 
     /**
-     * @Route("/article", name="article") //@Route("/article/{id}", name="article")
-     */
-    public function article(/*$id*/)
+     * Permet d'afficher un produit
+     * @Route("/shop/{slug}", name="product_show") 
+     * @return Response
+     */ 
+    public function show(ProductShop $product)
     {
-        return $this->render('shop/article.html.twig', [
-            'controller_name' => 'ShopController'
+        return $this->render('shop/show.html.twig', [
+            'product' => $product
         ]);
     }
 }
