@@ -1,7 +1,16 @@
 security:
+    # Donne le hashage à utiliser pour ma class User
+    encoders:
+        App\Entity\User:
+            algorithm : bcrypt
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: null }
+        # Cherche dans la bdd pour la connexion d'un user
+        in_database:
+            entity:
+                class: App\Entity\User
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -9,6 +18,16 @@ security:
         main:
             anonymous: true
 
+            # Connecte le providers au firewall
+            provider: in_database
+
+            form_login:
+                login_path: security_login
+                check_path: security_login
+
+            logout: 
+                path: security_logout
+                target: blog
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 

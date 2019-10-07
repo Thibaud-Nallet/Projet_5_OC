@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SecurityController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="center-align"> Connexion sur le site </h1>
+
+    <div class="row">
+        <form action="{{ path('security_login') }}" method="post">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Email" required name="_username" type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Password" required name="_password" type="password" class="validate">
+            </div>
+        </div>
+        
+        <div class="row">
+            <button type="submit" class="btn waves-effect waves-light"> Connexion </button>
+        </div>
+    </div>
+
+    </form>
+</div>
+{% endblock %}
