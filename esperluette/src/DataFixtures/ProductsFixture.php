@@ -25,7 +25,8 @@ class ProductsFixture extends Fixture
                 ->setCoverImage($coverImage)
                 ->setIntroduction($introduction)
                 ->setContent($content)
-                ->setPrice(mt_rand(0, 50));
+                ->setPrice(mt_rand(0, 50))
+                ->setCaption($faker->sentence());
 
             $manager->persist($product);
 

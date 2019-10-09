@@ -14,7 +14,7 @@ use App\Repository\ArticlesBlogRepository;
 
 
 class BlogController extends AbstractController
-{
+{ 
     /**
      * @Route("/blog", name="blog")
      */

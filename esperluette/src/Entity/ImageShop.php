@@ -2,7 +2,8 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM; 
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ImageShopRepository")
@@ -23,6 +24,7 @@ class ImageShop
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=10, max=255, minMessage=" est trop petit")
      */
     private $caption;
 

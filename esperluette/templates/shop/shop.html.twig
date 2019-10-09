@@ -7,19 +7,17 @@
 {% block title %} Boutique {% endblock %}
 
 {% block body %}
-
 <div class="row">
     {% include "includes/sidenav.html.twig" %}
-
-    <div class="col s8 list">
+    <div class="col s12 m10 offset-m1 l8 list">
         {% for product in products %}
         {% set url = path('product_show', {'slug' : product.slug}) %}
-        <div class="col s4">
+        <div class="col s12 l4">
             <div class="col s12">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <a href="{{ url }}">
-                            <img src="{{ product.coverImage }}" alt="#">
+                            <img src="{{ product.coverImage }}" alt="{{ product.caption }}">
                         </a>
                     </div>
                     <div class="card-content">
@@ -30,11 +28,9 @@
                         </span>
                         <p>
                             {{product.price}} €
-                            <i class="material-icons right">
-                                <a href="{{ url }}">
-                                    shopping_basket
-                                </a>
-                            </i>
+                            <a href="{{ url }}">
+                                <i class="fas fa-shopping-basket fa-lg right"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -43,5 +39,4 @@
         {% endfor %}
     </div> <!-- Fin col s8-->
 </div> <!-- Fin row global-->
-
 {% endblock %}

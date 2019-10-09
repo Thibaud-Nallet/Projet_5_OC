@@ -3,13 +3,19 @@
 namespace App\Entity;
 
 use Cocur\Slugify\Slugify;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductShopRepository")
  * @ORM\HasLifecycleCallbacks
+ * @UniqueEntity(
+ *  fields={"title"},
+ *  message="Une autre annonce possède déjà ce titre"
+ * )
  */
 class ProductShop
 {
@@ -22,11 +28,13 @@ class ProductShop
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=1, max=255, minMessage="Le titre est trop petit")
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
      */
     private $slug;
 
@@ -37,11 +45,13 @@ class ProductShop
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\Length(min=1, max=255, minMessage="L'introduction est trop petit")
      */
     private $introduction;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\Length(min=1, minMessage="Au moins 100 caractères")
      */
     private $content;
 
@@ -52,8 +62,14 @@ class ProductShop
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\ImageShop", mappedBy="id_product", orphanRemoval=true)
+     * @Assert\Valid()
      */
     private $imagesShop;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $caption;
 
     public function __construct()
     {
@@ -177,6 +193,18 @@ class ProductShop
                 $imagesShop->setIdProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCaption(): ?string
+    {
+        return $this->caption;
+    }
+
+    public function setCaption(string $caption): self
+    {
+        $this->caption = $caption;
 
         return $this;
     }
