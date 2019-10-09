@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SecurityController!{% endblock %}
+{% block title %} Inscription {% endblock %}
 
 {% block body %}
 <div class="container">
@@ -10,7 +10,7 @@
         {{ form_start(form) }}
         <div class="row">
             <div class="input-field col s6">
-                {{ form_row(form.username, {'label': "Nom d'utilisateur", 'attr':{'placeholder': "Votre pseudo"}}) }}
+                {{ form_row(form.firstname, {'label': "Nom d'utilisateur", 'attr':{'placeholder': "Votre pseudo"}}) }}
             </div>
             <div class="input-field col s6">
                 {{ form_row(form.email) }}
@@ -22,6 +22,11 @@
             </div>
             <div class="input-field col s6">
                 {{ form_row(form.confirm_password) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                {{ form_row(form.picture) }}
             </div>
         </div>
         <div class="row">

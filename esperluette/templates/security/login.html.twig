@@ -7,13 +7,16 @@
     <h1 class="center-align"> Connexion sur le site </h1>
 
     <div class="row">
+        {% if hasError %}
+        <div class="alert"> Authentification échouéee </div>
+        {% endif %}
         <form action="{{ path('security_login') }}" method="post">
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Email" required name="_username" type="text" class="validate">
+                <input placeholder="Email" required name="_username" type="text" class="validate" value="{{username}}" required>
             </div>
             <div class="input-field col s6">
-                <input placeholder="Password" required name="_password" type="password" class="validate">
+                <input placeholder="Password" required name="_password" type="password" class="validate" required>
             </div>
         </div>
         

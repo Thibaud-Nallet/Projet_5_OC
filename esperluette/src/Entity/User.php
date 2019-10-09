@@ -26,14 +26,16 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Email()
+     * @Assert\Email(message="Renseignez un email valide")
      */
     private $email;
 
-    /**
+    /** 
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
-    private $username;
+    private $firstname;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -45,6 +47,11 @@ class User implements UserInterface
      * @Assert\EqualTo(propertyPath="password", message="Vos mots de passe doivent être identiques")
      */
     public $confirm_password;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $picture;
 
     public function getId(): ?int
     {
@@ -63,14 +70,14 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getUsername(): ?string
+    public function getFirstname(): ?string
     {
-        return $this->username;
+        return $this->firstname;
     }
 
-    public function setUsername(string $username): self
+    public function setFirstname(string $firstname): self
     {
-        $this->username = $username;
+        $this->firstname = $firstname;
 
         return $this;
     }
@@ -87,18 +94,33 @@ class User implements UserInterface
         return $this;
     }
 
-    public function eraseCredentials()
+    public function getPicture(): ?string
     {
-        
+        return $this->picture;
     }
 
-    public function getSalt()
+    public function setPicture(?string $picture): self
     {
-        
+        $this->picture = $picture;
+
+        return $this;
     }
+
+    //4 Fonctions dont UserInterface a besoin 
+    public function getUsername(): ?string
+    {
+        return $this->email;
+    }
+
+    public function eraseCredentials()
+    { }
+
+    public function getSalt()
+    { }
 
     public function getRoles()
     {
         return ['ROLE_USER'];
     }
+
 }

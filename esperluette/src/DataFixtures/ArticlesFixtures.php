@@ -38,7 +38,6 @@ class ArticlesFixtures extends Fixture
                     $comments = new CommentBlog;
                     $content = '<p>' . join($faker->paragraphs(2), '</p><p>') . '</p>';
                     $days = (new \DateTime())->diff($article->getCreatedAt())->days;
-
                     $comments->setAuthor($faker->name())
                         ->setContent($content)
                         ->setCreatedAt($faker->dateTimeBetween('-' . $days . 'days'))
