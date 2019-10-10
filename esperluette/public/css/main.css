@@ -15,8 +15,6 @@ h2 {
     font-size: 18px;
 }
 
-
-
 h6 {
     font-family: 'Poiret One',
         cursive;
@@ -56,4 +54,7 @@ h6 {
 }
 .btn-floating {
     box-shadow: none;
+}
+#dropdown1 {
+    top: -60px;
 }
