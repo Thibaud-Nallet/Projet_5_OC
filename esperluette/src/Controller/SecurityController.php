@@ -16,6 +16,8 @@ use Symfony\Component\Security\Core\AuthenticationEvents;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class SecurityController extends AbstractController
 {
@@ -69,6 +71,7 @@ class SecurityController extends AbstractController
     /**
      * Permet de traiter et d'afficher un formulaire d'édition
      * @Route("/profil/edit", name="security_edit")
+     * @IsGranted("ROLE_USER")
      * @return Response
      */
     public function profilEdit(Request $request, ObjectManager $manager) {
@@ -88,6 +91,7 @@ class SecurityController extends AbstractController
     /**
      * Permet de modifier le mot de passe
      * @Route("/profil/edit-password", name="security_editPassword")
+     * @IsGranted("ROLE_USER")
      * @return Response
      */
     public function updatePassword(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder) {
@@ -112,6 +116,18 @@ class SecurityController extends AbstractController
         }
         return $this->render('security/password.html.twig', [
             'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * Permet d'afficher le profil d'un utilisateur connecté
+     * @Route("/profil/mon-profil", name="security_show")
+     * @IsGranted("ROLE_USER")
+     * @return Response
+     */
+    public function myProfil() {
+        return $this->render('security/profil.html.twig', [
+            'user' => $this->getUser()
         ]);
     }
 }

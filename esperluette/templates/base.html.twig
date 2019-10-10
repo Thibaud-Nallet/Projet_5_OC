@@ -27,6 +27,13 @@
 
 <body>
     <div class="row navbar-fixed">
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="{{ path('security_show') }}">Mon profil</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ path('security_logout') }}"><i class="fas fa-sign-in-alt fa-sm"></i>
+                    Déconnexion</a></li>
+        </ul>
         <nav class="navigation">
             <div class="nav-wrapper">
                 <ul class="right">
@@ -35,9 +42,9 @@
                     <li> <a href="{{ path('security_login') }}"> <i class="fas fa-sign-in-alt fa-sm"></i> Connexion </a>
                     </li>
                     {% else %}
-                    <li> <a href="{{ path('security_logout') }}"> <i class="fas fa-sign-in-alt fa-sm"></i> Déconnexion
-                        </a>
-                    </li>
+                    <li>
+                        <a class="dropdown-trigger" data-target="dropdown1">Dropdown<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -48,13 +55,13 @@
     {% for label, messages in app.flashes %}
     <div class="container">
         <div class="{{label}} ">
-        {% for message in messages %}
-        <p> {{message | raw}} </p>
-        {% endfor %}
+            {% for message in messages %}
+            <p> {{message | raw}} </p>
+            {% endfor %}
         </div>
     </div>
     {% endfor %}
-    
+
     {% block body %}{% endblock %}
 
     <!--***** SCRIPT *****-->

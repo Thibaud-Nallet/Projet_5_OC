@@ -7,11 +7,13 @@ use App\Form\ProductType;
 
 use App\Entity\ProductShop;
 use App\Repository\ProductShopRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class ShopController extends AbstractController
 {
@@ -29,6 +31,7 @@ class ShopController extends AbstractController
     /**
      * Permet de créer un produit
      * @Route("/boutique/new", name="product_create")
+     * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
     public function create(Request $request, ObjectManager $manager)
@@ -64,6 +67,7 @@ class ShopController extends AbstractController
     /**
      * Permet d'afficher le formulaire d'édition 
      * @Route("/boutique/{slug}/edit"), name="product_edit")
+     * @Security("is_granted('ROLE_ADMIN')")
      * @return Response 
      */
     public function edit(ProductShop $product, Request $request, ObjectManager $manager){
@@ -75,10 +79,8 @@ class ShopController extends AbstractController
                 $imagesShop->setIdProduct($product);
                 $manager->persist($imagesShop);
             }
-
             $manager->persist($product);
             $manager->flush();
-
             $this->addFlash(
                 'success',
                 "Le produit <strong>{$product->getTitle()}</strong>à bien été modifié"
@@ -91,6 +93,24 @@ class ShopController extends AbstractController
             'productForm' => $form->createView(),
             'product' => $product
         ]);
+    }
+
+    /**
+     * Permet de supprimer un produit 
+     * @Route("/boutique/{slug}/delete", name="product_delete")
+     * @IsGranted("ROLE_ADMIN")
+     * @param ProductShop $product
+     * @param ObjectManager $manager
+     * @return void
+     */
+    public function delete(ProductShop $product, ObjectManager $manager) {
+        $manager->remove($product);
+        $manager->flush();
+        $this->addFlash(
+            'success',
+            "Le produit <strong>{$product->getTitle()}</strong> à bien été supprimé"
+        );
+        return $this->redirectToRoute("product_index");
     }
 
     /**

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Profil {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="center-align"> Mon profil {{user.firstname}}</h1>
+    {% if(user is same as (app.user)) %}
+       <a href="{{ path("security_edit") }} " class="btn"> Modifier mes informations</a>
+       <a href="{{ path("security_editPassword") }}" class="btn">Modifier mon mot de passe</a>
+
+    {% endif %}
+    <div class="row">
+    <div class="col s3 center-align">
+        <img src="{{user.picture}}" class="avatar" alt="avatar de {{user.firstname}}">
+    </div>
+    <div class="col s9">
+        {{user.firstname}}
+    </div>
+</div>
+</div>
+{% endblock %}
