@@ -1,0 +1,39 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/shop.css')}}" type="text/css">
+{% endblock %}
+
+{% block title %} Edition du produit {{product.id}} {% endblock %}
+
+{% form_theme productForm 'includes/formCollection.html.twig' %}
+
+{% block body %}
+
+<div class="center-align">
+    <h1> Modifier le produit : {{product.title}}</h1>
+    </div>
+    {{ form_start(productForm) }}
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h4 class="card-title"> Corriger l'annonce </h4>
+                </div>
+                <div class="card-body">
+                    {{ form_widget(productForm) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="center-align">
+<button type="submit" class="btn waves-effect waves-light"> Enregister </button>
+{{ form_end(productForm) }}
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('/js/shop.js') }}"></script>
+{% endblock %}

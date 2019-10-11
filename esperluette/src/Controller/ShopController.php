@@ -15,6 +15,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
 class ShopController extends AbstractController
 {
     /**
@@ -64,36 +65,6 @@ class ShopController extends AbstractController
         ]);
     }
 
-    /**
-     * Permet d'afficher le formulaire d'édition 
-     * @Route("/boutique/{slug}/edit"), name="product_edit")
-     * @Security("is_granted('ROLE_ADMIN')")
-     * @return Response 
-     */
-    public function edit(ProductShop $product, Request $request, ObjectManager $manager){
-        $form = $this->createForm(ProductType::class, $product);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            //Prend en compte les images de l'autre entity
-            foreach ($product->getImagesShop() as $imagesShop) {
-                $imagesShop->setIdProduct($product);
-                $manager->persist($imagesShop);
-            }
-            $manager->persist($product);
-            $manager->flush();
-            $this->addFlash(
-                'success',
-                "Le produit <strong>{$product->getTitle()}</strong>à bien été modifié"
-            );
-            return $this->redirectToRoute('product_show', [
-                'slug' => $product->getSlug()
-            ]);
-        }
-        return $this->render('shop/edit.html.twig', [
-            'productForm' => $form->createView(),
-            'product' => $product
-        ]);
-    }
 
     /**
      * Permet de supprimer un produit 

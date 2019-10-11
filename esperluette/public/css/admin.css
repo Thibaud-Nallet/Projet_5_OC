@@ -1,0 +1,13 @@
+/***** HEADER *****/
+.avatar {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+#dropdown1 {
+    top: -65px;
+}
+.dropdown-content li>a{
+    font-size: 13px;
+}

@@ -34,7 +34,6 @@ class ProductShop
 
     /**
      * @ORM\Column(type="string", length=255)
-     * 
      */
     private $slug;
 
