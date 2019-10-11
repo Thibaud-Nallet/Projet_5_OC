@@ -3,36 +3,66 @@
 {% block title %} Admnistration des produits {% endblock %}
 
 {% block body %}
-<h1> Gestion des produits </h1>
+<section id="productIndex">
+    <div class="row">
+        <div class="col s10 offset-s1 title">
+            <h1>
+                Gestion des produits
+                <a href="{{path('admin_products_new')}}" class="btn waves-effect waves-light btnNew">
+                    <i class="fas fa-plus fa-xs"></i> ajouter
+                </a>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <div class="tableau">
 
-<table class="responsive-table striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Titre</th>
-            <th>Prix</th>
-            <th>Introduction</th>
-            <th>Contenu</th>
-            <th>Images</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for product in products %}
-        <tr>
-            <td>{{product.id}}</td>
-            <td>{{product.title}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.introduction | truncate(50, true)}}</td>
-            <td>{{product.content | raw | truncate(150, true)}}</td> 
-            <td>{{product.coverImage}}</td>
-            <td class="centered">
-                <a href="{{path('admin_products_edit', {'id' : product.id} )}}" class="btn"> <i class="fas fa-edit">
-                    </i></a>
-                <a href="" class="btn"> <i class="fas fa-trash"> </i></a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+                <table class="responsive-table striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Titre</th>
+                            <th>Introduction</th>
+                            <th>Content</th>
+                            <th>Images</th>
+                            <th>Prix</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.title | truncate(20, true)}}</td>
+                            <td>{{product.introduction | truncate(50, true)}}</td>
+                            <td>{{product.content | truncate(150, true)}}</td>
+                            <td>{{product.coverImage}}</td>
+                            <td>{{product.price}}</td>
+                            <td class="actions">
+                                <a href="{{path('admin_products_edit', {'id' : product.id} )}}"
+                                    class="btn btnActions blue darken-3 hoverable"> <i class="fas fa-edit">
+                                    </i></a>
+                                <a href="{{path('admin_products_delete', {'id' : product.id} )}}"
+                                    class="btn btnActions red darken-3 hoverable"> <i class="fas fa-trash"> </i></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="center-align">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                        <li class="active"><a href="#!">1</a></li>
+                        <li class="waves-effect"><a href="#!">2</a></li>
+                        <li class="waves-effect"><a href="#!">3</a></li>
+                        <li class="waves-effect"><a href="#!">4</a></li>
+                        <li class="waves-effect"><a href="#!">5</a></li>
+                        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

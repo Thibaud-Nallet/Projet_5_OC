@@ -14,21 +14,26 @@
 {% block _product_imagesShop_entry_widget %}
 <div class="input-field" id="block_{{id}}">
     <div class="row">
-        <div class="col s10">
+        <div class="col s11">
             <div class="row">
-                <div class="col s6">
+                <div class="col s3">
+                    {% if value %}
+                        <img src="{{value.url}}" class="responsive-img" alt="#">
+                    {% endif %}
+                </div>
+                <div class="col s4">
                     {{ form_widget(form.url) }}
                     {{ form_errors(form.url) }}
                 </div>
-                <div class="col s6">
+                <div class="col s4">
                     {{ form_widget(form.caption) }}
                     {{ form_errors(form.url) }}
                 </div>
             </div>
         </div>
-        <div class="col s2">
-            <button type="button" data-action="delete" data-target="#block_{{id}}" class="btn waves-effect waves-light">
-                X
+        <div class="col s1">
+            <button type="button" data-action="delete" data-target="#block_{{id}}" class="btn waves-effect waves-light hoverable">
+                <i class="fas fa-trash"></i>
             </button>
         </div>
     </div>

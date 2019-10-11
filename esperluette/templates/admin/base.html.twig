@@ -19,56 +19,42 @@
     <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
     <!-- Style sheet Perso -->
+    {% if app.request.attributes.get('_route') != 'admin_home' %}
     <link rel="stylesheet" href="{{ asset('/css/admin.css')}}" type="text/css">
+    {% endif %}
+    {% if app.request.attributes.get('_route') == 'admin_home' %}
+    <link rel="stylesheet" href="{{ asset('/css/adminHome.css')}}" type="text/css">
+    {% endif %}
     {% block stylesheets %} {% endblock %}
     <!--***** TITLE *****-->
     <title> & | {% block title %}{% endblock %} </title>
 </head>
 
 <body>
-    {#
-    <div class="row navbar-fixed">
-        <!-- Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="{{ path('security_show') }}">Mon profil</a></li>
-            <li class="divider"></li>
-            <li><a href="{{ path('security_logout') }}"><i class="fas fa-sign-in-alt fa-sm"></i>
-                    Déconnexion</a></li>
-        </ul>
-        <nav class="navigation">
-            <div class="nav-wrapper">
-                <ul class="right">
-                    <li> <a href=""> <i class="fas fa-shopping-basket fa-sm"></i> Panier </a> </li>
-                    {% if not app.user %}
-                    <li> <a href="{{ path('security_login') }}"> <i class="fas fa-sign-in-alt fa-sm"></i> Connexion </a>
-                    </li>
-                    {% else %}
-                    <li>
-                        <a class="dropdown-trigger" data-target="dropdown1">Dropdown<i
-                                class="material-icons right">arrow_drop_down</i></a></li>
-                    {% endif %}
-                </ul>
+
+    {% if app.request.attributes.get('_route') != 'admin_home' %}
+    {% include "admin/includes/sidenav.html.twig" %}
+    {% endif %}
+
+    <main>
+        {# Permet d'afficher les flash #}
+        {% for label, messages in app.flashes %}
+        <div class="container">
+            <div class="{{label}} ">
+                {% for message in messages %}
+                <p> {{message | raw}} </p>
+                {% endfor %}
             </div>
-        </nav>
-    </div>
-#}
-
-{% include "admin/includes/header.html.twig" %}
-
-    {# Permet d'afficher les flash #}
-    {% for label, messages in app.flashes %}
-    <div class="container">
-        <div class="{{label}} ">
-            {% for message in messages %}
-            <p> {{message | raw}} </p>
-            {% endfor %}
         </div>
-    </div>
-    {% endfor %}
+        {% endfor %}
+        {% block body %}
 
-    {% block body %} 
-    
-    {% endblock %}
+        {% endblock %}
+    </main>
+
+
+
+
 
     <!--***** SCRIPT *****-->
     <!--Import JQuery-->

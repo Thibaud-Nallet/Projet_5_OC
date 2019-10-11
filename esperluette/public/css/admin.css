@@ -1,13 +1,92 @@
-/***** HEADER *****/
-.avatar {
-    max-width: 40px;
-    max-height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
+.test {
+    height: 100px;
+    border: 2px solid black;
 }
-#dropdown1 {
-    top: -65px;
+
+/***** GENERAL *****/
+
+
+h1 {
+    margin: 10px 0px;
+    font-size: 40px;
 }
-.dropdown-content li>a{
-    font-size: 13px;
+
+/* Pour la sidenav fixe évite de cacher derrière la sidenav. ATTENTION TOUT METTRE DANS LE MAIN */
+header,
+main,
+footer {
+    padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+
+    header,
+    main,
+    footer {
+        padding-left: 0;
+    }
+}
+
+/* Message de validation après un succés flash */
+.success {
+    background-color: #66bb6a;
+    height: 75px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.success p {
+    padding: 15px;
+    margin-left: 20px;
+    font-size: 26px;
+}
+
+/***** SIDENAV *****/
+
+
+/***** TABLEAUX GESTION DES PRODUITS *****/
+#productIndex .btnNew {
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+#productIndex .actions {
+    display: inline-flex;
+    border-radius: 10px;
+}
+.card
+{
+    margin: 0px 40px;
+}
+#productIndex .tableau {
+    padding: 0px 20px;
+}
+
+#productIndex .btnActions {
+    margin: 15px 5px 0px 5px;
+}
+
+#productIndex th {
+    text-align: center;
+}
+
+#productIndex td {
+    font-size: 12px;
+}
+
+/***** FORMULAIRE D'EDITION *****/
+#editProduct h1 {
+    margin-bottom: 40px;
+}
+
+#editProduct .card {
+    padding: 50px;
+}
+
+#editProduct .card-title {
+    margin-left: 40px;
+}
+
+#editProduct .btnSave {
+    margin-bottom: 20px;
 }

@@ -4,22 +4,19 @@
 <link rel="stylesheet" href="{{ asset('/css/admin.css')}}" type="text/css">
 {% endblock %}
 
-{% block title %} Edition du produit {{product.id}} {% endblock %}
+{% block title %} Nouveau produit {% endblock %}
 
 {% form_theme productForm 'admin/includes/formCollection.html.twig' %}
 
 {% block body %}
 <section id="editProduct">
     <div class="center-align">
-        <h1> Modifier le produit : {{product.title}}</h1>
+        <h1> Ajouter un nouveau produit </h1>
     </div>
     {{ form_start(productForm) }}
     <div class="row">
         <div class="col s10 offset-s1">
             <div class="card ">
-                <div class="card-header teal lighten-2">
-                    <h4 class="card-title"> Corriger l'annonce </h4>
-                </div>
                 <div class="card-body">
                     {{ form_widget(productForm) }}
                 </div>
