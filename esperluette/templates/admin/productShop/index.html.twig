@@ -31,13 +31,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for product in products %}
+                        {% for product in pagination.data %}
                         <tr>
                             <td>{{product.id}}</td>
                             <td>{{product.title | truncate(20, true)}}</td>
                             <td>{{product.introduction | truncate(50, true)}}</td>
                             <td>{{product.content | truncate(150, true)}}</td>
-                            <td>{{product.coverImage}}</td>
+                            <td>
+                            <img src="{{product.coverImage}}" class="responsive-img imgTd"
+                                alt="image de couverture du produit {{product.title}}">
+                            </td>
                             <td>{{product.price}}</td>
                             <td class="actions">
                                 <a href="{{path('admin_products_edit', {'id' : product.id} )}}"
@@ -50,17 +53,7 @@
                         {% endfor %}
                     </tbody>
                 </table>
-                <div class="center-align">
-                    <ul class="pagination">
-                        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                        <li class="active"><a href="#!">1</a></li>
-                        <li class="waves-effect"><a href="#!">2</a></li>
-                        <li class="waves-effect"><a href="#!">3</a></li>
-                        <li class="waves-effect"><a href="#!">4</a></li>
-                        <li class="waves-effect"><a href="#!">5</a></li>
-                        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-                    </ul>
-                </div>
+                {{ pagination.display() }}
             </div>
         </div>
     </div>

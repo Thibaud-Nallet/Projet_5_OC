@@ -1,0 +1,18 @@
+<div class="center-align">
+    <ul class="pagination">
+        <li class="waves-effect {% if page == 1 %} disabled {% endif %}">
+            <a href="{{ path(route, {'page' : page - 1 }) }}">
+                <i class="material-icons">chevron_left</i>
+            </a>
+        </li>
+        {% for i in 1..pages %}
+        <li class="{% if page == i %} active {% endif %}"><a
+                href="{{ path(route, {'page' : i })}} ">{{ i }}</a></li>
+        {% endfor %}
+        <li class="waves-effect {% if page == pages %} disabled {% endif %}">
+            <a href="{{ path(route, {'page' : page + 1 }) }}">
+                <i class="material-icons">chevron_right</i>
+            </a>
+        </li>
+    </ul>
+</div>

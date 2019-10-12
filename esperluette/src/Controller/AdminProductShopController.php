@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ProductType;
 use App\Entity\ProductShop;
+use App\Service\Pagination;
 use App\Repository\ProductShopRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -16,17 +17,18 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class AdminProductShopController extends AbstractController
 {
     /**
-     * @Route("/admin/products", name="admin_products_index")
+     * @Route("/admin/products/{page<\d+>?1}", name="admin_products_index")
      * @IsGranted("ROLE_ADMIN")
      */
-    public function index(ProductShopRepository $repo)
+    public function index(ProductShopRepository $repo, $page, Pagination $pagination)
     {
-       
+        $pagination->setEntityClass(ProductShop::class)
+            ->setPage($page)
+            ->setLimit(10)
+            ;
 
-        $products = $repo->findBy([],[], 5, 0);
-        dump($products);
         return $this->render('admin/productShop/index.html.twig', [
-            'products' => $repo->findAll()
+            'pagination' => $pagination
         ]);
     }
 
@@ -107,7 +109,7 @@ class AdminProductShopController extends AbstractController
      * @param ObjectManager $manager
      * @return Response
      */
-    public function delete(ProductShop $product, ObjectManager $manager) 
+    public function delete(ProductShop $product, ObjectManager $manager)
     {
         $manager->remove($product);
         $manager->flush();
@@ -117,5 +119,4 @@ class AdminProductShopController extends AbstractController
         );
         return $this->redirectToRoute('admin_products_index');
     }
-
 }

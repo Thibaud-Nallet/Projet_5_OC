@@ -74,6 +74,14 @@ footer {
     font-size: 12px;
 }
 
+#productIndex img {
+    max-width : 100px;
+    max-height : 100px;
+}
+
+#productIndex .pagination {
+    padding-bottom : 10px;
+}
 /***** FORMULAIRE D'EDITION *****/
 #editProduct h1 {
     margin-bottom: 40px;
