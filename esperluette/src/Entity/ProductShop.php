@@ -70,6 +70,11 @@ class ProductShop
      */
     private $caption;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CategoryShop", inversedBy="idProduct")
+     */
+    private $categoryShop;
+
     public function __construct()
     {
         $this->imagesShop = new ArrayCollection();
@@ -204,6 +209,18 @@ class ProductShop
     public function setCaption(string $caption): self
     {
         $this->caption = $caption;
+
+        return $this;
+    }
+
+    public function getCategoryShop(): ?CategoryShop
+    {
+        return $this->categoryShop;
+    }
+
+    public function setCategoryShop(?CategoryShop $categoryShop): self
+    {
+        $this->categoryShop = $categoryShop;
 
         return $this;
     }

@@ -19,12 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
     <!-- Style sheet Perso -->
-    {% if app.request.attributes.get('_route') != 'admin_home' %}
     <link rel="stylesheet" href="{{ asset('/css/admin.css')}}" type="text/css">
-    {% endif %}
-    {% if app.request.attributes.get('_route') == 'admin_home' %}
-    <link rel="stylesheet" href="{{ asset('/css/adminHome.css')}}" type="text/css">
-    {% endif %}
     {% block stylesheets %} {% endblock %}
     <!--***** TITLE *****-->
     <title> & | {% block title %}{% endblock %} </title>
@@ -32,10 +27,8 @@
 
 <body>
 
-    {% if app.request.attributes.get('_route') != 'admin_home' %}
     {% include "admin/includes/sidenav.html.twig" %}
-    {% endif %}
-
+ 
     <main>
         {# Permet d'afficher les flash #}
         {% for label, messages in app.flashes %}

@@ -5,7 +5,6 @@
 
 /***** GENERAL *****/
 
-
 h1 {
     margin: 10px 0px;
     font-size: 40px;
@@ -41,7 +40,40 @@ footer {
     font-size: 26px;
 }
 
-/***** SIDENAV *****/
+.imgTable {
+     max-width: 50px;
+     max-height: 50px;
+}
+
+
+
+/***** HOME *****/
+#nav_dashboard h1 {
+    margin-bottom: 20px;
+}
+
+#nav_dashboard .card-content {
+    background-color: #4527a0;
+    border-radius: 5px;
+    height: 100px;
+}
+
+#nav_dashboard i {
+    color: white;
+}
+
+#nav_dashboard span {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#productDash h2,
+#userDash h2,
+#blogDash h2 {
+    font-size: 36px;
+    margin-left: 40px;
+}
 
 
 /***** TABLEAUX GESTION DES PRODUITS *****/
@@ -54,10 +86,11 @@ footer {
     display: inline-flex;
     border-radius: 10px;
 }
-.card
-{
+
+#productIndex .card {
     margin: 0px 40px;
 }
+
 #productIndex .tableau {
     padding: 0px 20px;
 }
@@ -75,13 +108,14 @@ footer {
 }
 
 #productIndex img {
-    max-width : 100px;
-    max-height : 100px;
+    max-width: 100px;
+    max-height: 100px;
 }
 
 #productIndex .pagination {
-    padding-bottom : 10px;
+    padding-bottom: 10px;
 }
+
 /***** FORMULAIRE D'EDITION *****/
 #editProduct h1 {
     margin-bottom: 40px;

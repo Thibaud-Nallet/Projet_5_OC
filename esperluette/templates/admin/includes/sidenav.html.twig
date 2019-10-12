@@ -12,9 +12,9 @@
     </li>
     {# LIEN #}
     <li {% if app.request.attributes.get('_route') == 'admin_home' %} class="active" {% endif %}>
-        <a href="{{ path('admin_home') }}">
+        <a href="{{ path('admin_dashboard') }}">
             <i class="fas fa-tachometer-alt fa-sm"></i>
-            Dashboard
+            Tableau de bord
         </a>
     </li>
     <li {% if app.request.attributes.get('_route') == 'blog' %}class="active" {% endif %}>

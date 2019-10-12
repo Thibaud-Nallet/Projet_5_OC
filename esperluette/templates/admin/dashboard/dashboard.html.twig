@@ -1,0 +1,227 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Tableau de bord{% endblock %}
+
+{% block body %}
+<section id="nav_dashboard">
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h1> Tableau de bord </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 l3">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <div class="row valign-wrapper">
+                        <div class="col s3 offset-s1">
+                            <a href="#productDash">
+                                <i class="fas fa-cash-register fa-3x"></i>
+                            </a>
+                        </div>
+                        <div class="col s7">
+                            <span> {{ stats.products }} <br> Produits </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l3">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <div class="row valign-wrapper">
+                        <div class="col s3 offset-s1">
+                            <a href="#blogDash">
+                                <i class="fas fa-blog fa-3x"></i>
+                            </a>
+                        </div>
+                        <div class="col s7">
+                            <span> {{ stats.articles }} <br> Articles </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l3">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <div class="row valign-wrapper">
+                        <div class="col s3 offset-s1">
+                            <a href="#blogDash">
+                                <i class="fas fa-comments fa-3x"></i>
+                            </a>
+                        </div>
+                        <div class="col s7">
+                            <span> {{ stats.comments }} <br> Commentaires </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l3">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <div class="row valign-wrapper">
+                        <div class="col s3 offset-s1">
+                            <a href="#userDash">
+                                <i class="fas fa-users fa-3x"></i>
+                            </a>
+                        </div>
+                        <div class="col s7">
+                            <span> {{ stats.users }} <br> Utilisateurs </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="productDash">
+    <div class="row">
+        <div class="col s12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <h2> Les derniers articles </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Produit</th>
+                                <th>Image</th>
+                                <th>Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for product in lastProducts %}
+                            </tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.title}}</td>
+                            <td><img class="imgTable" src="{{product.coverImage}}" alt="image {{product.title}} "></td>
+                            <td>{{product.price}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <h2> Les derniers achats </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Produit</th>
+                                <th>Image</th>
+                                <th>Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for product in lastProducts %}
+                            </tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.title}}</td>
+                            <td><img class="imgTable" src="{{product.coverImage}}" alt="image {{product.title}} "></td>
+                            <td>{{product.price}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="userDash">
+    <div class="row">
+        <div class="col s12 l12">
+            <div class="card">
+                <div class="card-content">
+                    <h2> Les derniers utilisateurs inscrit </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Produit</th>
+                                <th>Image</th>
+                                <th>Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for product in lastProducts %}
+                            </tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.title}}</td>
+                            <td><img class="imgTable" src="{{product.coverImage}}" alt="image {{product.title}} "></td>
+                            <td>{{product.price}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="blogDash">
+    <div class="row">
+        <div class="col s12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <h2> Articles </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Produit</th>
+                                <th>Image</th>
+                                <th>Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for product in lastProducts %}
+                            </tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.title}}</td>
+                            <td><img class="imgTable" src="{{product.coverImage}}" alt="image {{product.title}} "></td>
+                            <td>{{product.price}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <h2> Commentaires </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Produit</th>
+                                <th>Image</th>
+                                <th>Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for product in lastProducts %}
+                            </tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.title}}</td>
+                            <td><img class="imgTable" src="{{product.coverImage}}" alt="image {{product.title}} "></td>
+                            <td>{{product.price}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
