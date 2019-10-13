@@ -18,6 +18,7 @@ class CartController extends AbstractController
         return $this->render('shop/cart/panier.html.twig', [
             'items' => $cartService->getFullCart(),
             'total' => $cartService->getTotal(),
+            'productTotal' => $cartService->getProductTotal(),
             'categories' => $categoryShopRepo->findAll()
         ]);
     }

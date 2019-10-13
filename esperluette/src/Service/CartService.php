@@ -58,4 +58,9 @@ class CartService
         }
         return $total;
     }
+
+    public function getProductTotal() {
+        $productTotal = count($this->getFullCart());
+        return $productTotal;
+    }
 }

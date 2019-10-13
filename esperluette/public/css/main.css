@@ -32,7 +32,8 @@ h6 {
 }
 
 .navigation li a .fab,
-.navigation li a .fas {
+.navigation li a .fas,
+.navigation strong {
     color: gray;
 }
 
