@@ -6,55 +6,65 @@
 
 {% block title %} Panier {% endblock %}
 
-
 {% block body %}
 
-    <div class="row">
-        <div class="row">
-            <p class="comeBack right-align">
-                Revenir à la boutique
-                <a href="{{path('product_index')}}">
-                    <i class="far fa-times-circle fa-lg"></i>
-                </a>
-            </p>
-        </div>
-        Panier
-        {% if items | length > 0 %}
-        <table>
-            <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Prix</th>
-                    <th>Quantité</th>
-                    <th>Total</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in items %}
-                <tr>
-                    <td>{{ item.product.title }}</td>
-                    <td>{{ item.product.price }}</td>
-                    <td>{{ item.quantity }}</td>
-                    <td>{{ item.product.price * item.quantity }}</td>
-                    <td>
-                        <a href="{{ path('cart_remove', {'id' : item.product.id }) }} " class="btn">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3"> Total : </td>
-                    <td>{{total}}</td>
-                    <td></td>
-                </tr>
-            </tfoot>
-        </table>
-        {% else %}
-        <p> Votre panier est vide </p>
-        {% endif %}
+<div class="row">
+    <div class="col s12 m10 offset-m1">
+        <form class="card">
+            {% if items | length > 0 %}
+            <table class="striped centered">
+                <thead>
+                    <tr>
+                        <th> <span> Votre panier </span></th>
+                        <th>Produit</th>
+                        <th></th>
+                        <th>Prix TTC </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>
+                            <img src="{{ item.product.coverImage }}" alt="{{ item.product.title }}">
+                        </td>
+                        <td>
+                            {{ item.product.title }}
+                        </td>
+                        <td>
+                            <a href="{{ path('cart_remove', {'id' : item.product.id }) }}">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                        <td>
+                            {{ item.product.price }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p> Votre panier est vide </p>
+            {% endif %}
+        </form>
 
+        <div class="row total">
+            <div class="col m3 offset-m9 card ">
+                <dl class="right">
+                    {#
+                    <dt>Total HT :</dt>
+                    <dd>799,99€</dd>
+                    <dt>TVA :</dt>
+                    <dd>200€</dd>
+                    #}
+                    <dt>Total:</dt>
+                    <dd>{{total}} €</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row btnPanier">
+            <a href="{{ path('product_index') }}" class="left">Continuer mes achats</a>
+            <a href="livraison.php" class="btn btn-success right">Valider mon panier</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

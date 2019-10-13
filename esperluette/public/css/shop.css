@@ -1,6 +1,4 @@
 h1 {
-    font-family: 'Special Elite',
-        cursive;
     margin: 30px 0 10px 0;
     font-size: 20px;
 }
@@ -19,6 +17,7 @@ footer {
         padding-left: 0;
     }
 }
+
 /***** SIDENAV *****/
 .logo {
     width: 100px;
@@ -29,11 +28,6 @@ footer {
 .category li a {
     font-size: 12px;
     margin-left: 20px;
-}
-
-li {
-    font-family: 'Special Elite',
-        cursive;
 }
 
 .category li>a:hover {
@@ -73,8 +67,43 @@ li {
     font-family: 'Special Elite', cursive;
 }
 
+/***** PANIER *****/
+table span {
+    font-size: 24px;
+}
+table img {
+    max-width: 200px;
+    max-height: 200px;
+}
+ table i {
+     color: black;
+ }
 
+ .total {
+     padding-right : 10px;
+ }
 
+ .total dl {
+     padding-right: 40px;
+ }
+
+ .total dt {
+     font-size: 20px;
+     font-weight: bold;
+ }
+ .total dd {
+     font-size: 16px;
+ }
+ .btnPanier {
+     padding: 0px 10px;
+ }
+ .btnPanier .left {
+     color: black;
+ }
+ .btnPanier .left:hover {
+     text-decoration: underline;
+ }
+/*****  *****/
 .panier {
     margin-left: 100px;
 }
@@ -94,7 +123,6 @@ li {
 }
 
 .titleCard {
-    font-family: 'Special Elite', cursive;
     font-size: 14px;
 }
 
@@ -114,8 +142,4 @@ li {
 
 #product-image {
     margin-bottom: 20px;
-}
-
-#search {
-    margin-left: 52px;
 }

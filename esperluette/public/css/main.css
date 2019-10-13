@@ -1,5 +1,7 @@
 body {
     overflow-x: hidden;
+    font-family: 'Special Elite',
+    cursive;
 }
 
 h1 {
@@ -9,8 +11,6 @@ h1 {
 }
 
 h2 {
-    font-family: 'Special Elite',
-        cursive;
     margin-top: 0px;
     font-size: 18px;
 }
@@ -26,8 +26,6 @@ h6 {
 }
 
 .navigation li a {
-    font-family: 'Special Elite',
-        cursive;
     color: black;
 }
 
