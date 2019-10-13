@@ -1,10 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'shop/baseShop.html.twig' %}
 
-{% block stylesheets %}
+{% block title %} {{ product.title }} {% endblock %}
+
+{% block stylesheets %} 
 <link rel="stylesheet" href="{{ asset('/css/shop.css')}}" type="text/css">
 {% endblock %}
-
-{% block title %} Article {% endblock %}
 
 {% block body %}
 <div class="row">
@@ -16,7 +16,6 @@
             </a>
         </p>
     </div>
-    {% include "includes/sidenav.html.twig" %}
     <div class="row">
         <div class="col s6 imgCont">
             <div class="carousel carousel-slider">
@@ -30,7 +29,7 @@
             <h1> {{ product.title }}</h1>
             <p> {{ product.price }} € </p>
             <hr>
-            <button> Ajouter au panier </button>
+            <a href="{{ path('cart_add', {'id' : product.id }) }}" class="btn"> Ajouter au panier </a>
             <hr>
             <p> {{ product.content | raw }} </p>
         </div>

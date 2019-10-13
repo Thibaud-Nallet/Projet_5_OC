@@ -4,7 +4,21 @@ h1 {
     margin: 30px 0 10px 0;
     font-size: 20px;
 }
+/* Pour la sidenav fixe évite de cacher derrière la sidenav. ATTENTION TOUT METTRE DANS LE MAIN */
+header,
+main,
+footer {
+    padding-left: 300px;
+}
 
+@media only screen and (max-width : 992px) {
+
+    header,
+    main,
+    footer {
+        padding-left: 0;
+    }
+}
 /***** SIDENAV *****/
 .logo {
     width: 100px;

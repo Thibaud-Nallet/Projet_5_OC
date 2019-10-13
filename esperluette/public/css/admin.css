@@ -41,11 +41,9 @@ footer {
 }
 
 .imgTable {
-     max-width: 50px;
-     max-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
 }
-
-
 
 /***** HOME *****/
 #nav_dashboard h1 {

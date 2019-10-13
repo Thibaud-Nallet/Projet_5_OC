@@ -1,0 +1,25 @@
+<div class="row navbar-fixed">
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{{ path('security_show') }}">Mon profil</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ path('security_logout') }}"><i class="fas fa-sign-in-alt fa-sm"></i>
+                Déconnexion</a></li>
+    </ul>
+    <nav class="navigation">
+        <div class="nav-wrapper">
+            <ul class="right">
+                <li> <a href="{{ path('cart_index') }} "> <i class="fas fa-shopping-basket fa-sm"></i> Panier </a>
+                </li>
+                {% if not app.user %}
+                <li> <a href="{{ path('security_login') }}"> <i class="fas fa-sign-in-alt fa-sm"></i> Connexion </a>
+                </li>
+                {% else %}
+                <li>
+                    <a class="dropdown-trigger" data-target="dropdown1">Dropdown<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>

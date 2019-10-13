@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'shop/baseShop.html.twig' %}
 
 {% block stylesheets %}
 <link rel="stylesheet" href="{{ asset('/css/shop.css')}}" type="text/css">
@@ -8,8 +8,7 @@
 
 {% block body %}
 <div class="row">
-    {% include "includes/sidenav.html.twig" %}
-    <div class="col s12 m10 offset-m1 l8 list">
+    <div class="col s12 m12 list">
         {% for product in products %}
         {% set url = path('product_show', {'slug' : product.slug}) %}
         <div class="col s12 l4">
@@ -28,9 +27,9 @@
                         </span>
                         <p>
                             {{product.price}} €
-                            <a href="{{ url }}">
-                                <i class="fas fa-shopping-basket fa-lg right"></i>
-                            </a>
+                             <a href="{{ path('cart_add', {'id' : product.id}) }}">
+                                 <i class="fas fa-shopping-basket fa-lg right"></i>
+                             </a>
                         </p>
                     </div>
                 </div>

@@ -1,54 +1,49 @@
-<div id="sidenav">
-    <div class="col s3">
-        <!-- navbar content here  -->
-        <ul id="slide-out" class="sidenav sidenav-fixed">
-            <li class="center-align">
-                <h1> La boutique </h1>
-            </li>
-            <li class="center-align">
-                <div>
-                    <a href="/">
-                        <img class="logo" src="{{ asset('/images/logo.png') }}" alt="#">
-                    </a>
+<!-- navbar content here  -->
+<ul id="slide-out" class="sidenav sidenav-fixed">
+    <li class="center-align">
+        <h1> La boutique </h1>
+    </li>
+    <li class="center-align">
+        <div>
+            <a href="/">
+                <img class="logo" src="{{ asset('/images/logo.png') }}" alt="#">
+            </a>
+        </div>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a href="{{ path('product_index') }}"> Panier
+            <span class="panier"> 0 | 0€.00 </span>
+        </a>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a href="{{ path('product_index') }}">Produits</a>
+        <ul class="category">
+            <li>
+                <div class="input-field">
+                    <input id="search" type="search" placeholder=" Rechercher ..." required>
                 </div>
-                <div class="divider"></div>
             </li>
-            <li>
-                <a href="{{ path('product_index') }}"> Panier
-                    <span class="panier"> 0 | 0€.00 </span>
-                </a>
-                <div class="divider"></div>
-            </li>
-            <li>
-                <a href="{{ path('product_index') }}">Produits</a>
-                <ul class="category">
-                    <li>
-                        <div class="input-field">
-                            <input id="search" type="search" placeholder=" Rechercher ..." required>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </li>
-                    {% for category in categories %}
-                    <li> <a href="#"> {{ category.title | truncate(30) }} </a> </li>
-                    {% endfor %}
-                </ul>
-                <div class="divider"></div>
-            </li>
-            <li>
-                <a href="{{ path('home') }}"> Accueil </a>
-            </li>
-            <li>
-                <a href="{{ path('blog') }}"> Blog </a>
-            </li>
-            <li>
-                <a href="/"> Contact </a>
-                <div class="divider"></div>
-            </li>
-            <li>
-                <a href="/"> CGV </a>
-                <div class="divider"></div>
-            </li>
+            {% for category in categories %}
+            <li> <a href="#"> {{ category.title | truncate(30) }} </a> </li>
+            {% endfor %}
         </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-</div>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a href="{{ path('home') }}"> Accueil </a>
+    </li>
+    <li>
+        <a href="{{ path('blog') }}"> Blog </a>
+    </li>
+    <li>
+        <a href="/"> Contact </a>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a href="/"> CGV </a>
+        <div class="divider"></div>
+    </li>
+</ul>
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
