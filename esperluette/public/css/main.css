@@ -83,3 +83,11 @@ h6 {
 .dropdown-trigger{
     display: inline-flex;
 }
+
+.input-field .required {
+    display: none;
+}
+
+#registration label {
+    display: block;
+}

@@ -16,6 +16,7 @@ h1 {
     font-size: 18px;
 }
 
+/***** FORMULAIRE DE CONNEXION *****/
 #login {
     margin-top: 50px;
 }
@@ -41,11 +42,11 @@ h1 {
     margin: 0px 0px 30px 30px;
 }
 
-#login a {
+.aBlack {
     color: black;
 }
 
-#login a:hover {
+.aBlack:hover {
     text-decoration: underline;
 }
 
@@ -55,3 +56,15 @@ h1 {
    font-style: italic;
 }
 
+/***** FORMULAIRE D'INSCRIPTION *****/
+#register .card {
+    margin-top : 50px;
+}
+
+#register .card form{
+    padding: 30px 60px;
+}
+
+.fa-sm {
+    font-size: .5em;
+}

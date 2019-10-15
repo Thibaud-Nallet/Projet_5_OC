@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="{{ asset('/css/security.css')}}" type="text/css">
 {% endblock %}
 
-
 {% block body %}
 
 <div class="container">
@@ -48,18 +47,17 @@
                         <div class="row center-align">
                             <button type="submit" class="btn"> Connexion </button>
                             <div class="row lost">
-                            <a href="{{ path('security_editPassword') }}"> <span class="lost"> Mot de passe perdu ? </span></a>
+                            <a href="{{ path('security_editPassword') }}"> <span class="lost aBlack"> Mot de passe perdu ? </span></a>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="col s10">
-                    <a href="{{ path('home') }}"> Retour à l'accueil </a>
+                    <a class="aBlack" href="{{ path('home') }}"> Retour à l'accueil </a>
                    
                 </div>
             </div>
         </div>
     </section>
 </div>
-
 {% endblock %}
