@@ -17,14 +17,11 @@ class CartService
         $this->productShopRepo = $productShopRepo;
     }
 
+
     public function add(int $id)
     {
         $panier = $this->session->get('panier', []);
-        if (!empty($panier[$id])) {
-            $panier[$id]++;
-        } else {
-            $panier[$id] = 1;
-        }
+        $panier[$id] = 1;
         $this->session->set('panier', $panier);
     }
 
@@ -44,7 +41,7 @@ class CartService
         foreach ($panier as $id => $quantity) {
             $panierWithData[] = [
                 'product' => $this->productShopRepo->find($id),
-                'quantity' => $quantity,
+                //'quantity' => $quantity,  
             ];
         }
         return $panierWithData;
@@ -54,12 +51,13 @@ class CartService
     {
         $total = 0;
         foreach ($this->getFullCart() as $item) {
-            $total += $item['product']->getPrice() * $item['quantity'];
+            $total += $item['product']->getPrice() /* * $item['quantity']*/;
         }
         return $total;
     }
 
-    public function getProductTotal() {
+    public function getProductTotal()
+    {
         $productTotal = count($this->getFullCart());
         return $productTotal;
     }

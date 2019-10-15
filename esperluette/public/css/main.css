@@ -57,3 +57,29 @@ h6 {
 #dropdown1 {
     top: -60px;
 }
+
+/* Message de validation après un succés flash */
+.success,
+.alert {
+    background-color: #66bb6a;
+    height: 75px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.success p,
+.alert p {
+    margin: auto;
+    font-size: 18px;
+}
+
+.avatarNav {
+    max-width: 40px;
+    max-height: 40px;
+    margin: auto;
+    margin-right: 10px;
+}
+.dropdown-trigger{
+    display: inline-flex;
+}

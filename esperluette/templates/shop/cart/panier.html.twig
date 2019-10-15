@@ -17,8 +17,8 @@
                     <tr>
                         <th> <span> Votre panier </span></th>
                         <th>Produit</th>
-                        <th></th>
-                        <th>Prix TTC </th>
+                        <th>Prix HT </th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,12 +31,12 @@
                             {{ item.product.title }}
                         </td>
                         <td>
+                            {{ item.product.price }}
+                        </td>
+                        <td>
                             <a href="{{ path('cart_remove', {'id' : item.product.id }) }}">
                                 <i class="fas fa-trash"></i>
                             </a>
-                        </td>
-                        <td>
-                            {{ item.product.price }}
                         </td>
                     </tr>
                     {% endfor %}
@@ -46,24 +46,35 @@
             <p> Votre panier est vide </p>
             {% endif %}
         </form>
-
+        {% set tva = (total / 120) * 20 %}
+        {% set totalHt = total - tva %}
         <div class="row total">
             <div class="col m3 offset-m9 card ">
                 <dl class="right">
-                    {#
                     <dt>Total HT :</dt>
-                    <dd>799,99€</dd>
+                    <dd>{{ totalHt | number_format(2) }} €</dd>
                     <dt>TVA :</dt>
-                    <dd>200€</dd>
-                    #}
+                    <dd>{{ tva | number_format(2) }} €</dd>
                     <dt>Total:</dt>
-                    <dd>{{total}} €</dd>
+                    <dd>{{ total | number_format(2) }} €</dd>
                 </dl>
             </div>
         </div>
         <div class="row btnPanier">
             <a href="{{ path('product_index') }}" class="left">Continuer mes achats</a>
-            <a href="livraison.php" class="btn btn-success right">Valider mon panier</a>
+           
+                <a href="{{ path('livraison') }}" class="btn btn-success right">Valider mon
+                    panier</a>
+           
+            
+           {#
+             {% if not app.user %}
+              {% else %}
+              <a href="{{ path('buying') }}" class="btn btn-success right">Valider mon
+                  panier</a>
+              {% endif %}
+            #}
+
         </div>
     </div>
 </div>

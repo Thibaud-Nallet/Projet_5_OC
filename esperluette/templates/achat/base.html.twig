@@ -25,11 +25,7 @@
     <title> & | {% block title %}{% endblock %} </title>
 </head>
 
-<body> 
-    
-        {%  include "includes/navConnect.html.twig" %}
-    
- 
+<body>
     {# Permet d'afficher les flash #}
     {% for label, messages in app.flashes %}
     <div class="container">

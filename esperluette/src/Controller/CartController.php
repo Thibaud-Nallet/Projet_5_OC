@@ -40,6 +40,10 @@ class CartController extends AbstractController
     public function remove($id, CartService $cartService)
     {
         $cartService->remove($id);
+        $this->addFlash(
+            'success',
+            "Le produit à bien été supprimé"
+        );
         return $this->redirectToRoute('cart_index');
     }
 }
