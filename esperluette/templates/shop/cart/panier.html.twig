@@ -25,7 +25,9 @@
                     {% for item in items %}
                     <tr>
                         <td>
-                            <img src="{{ item.product.coverImage }}" alt="{{ item.product.title }}">
+                            <a href="{{ path('product_show', {'slug' : item.product.slug}) }}">
+                                <img src="{{ item.product.coverImage }}" alt="{{ item.product.title }}">
+                            </a>
                         </td>
                         <td>
                             {{ item.product.title }}

@@ -9,7 +9,7 @@
 {% block body %}
 <div class="row">
     <div class="col s12 m12 list">
-        {% for product in products %}
+        {% for product in pagination.data %}
         {% set url = path('product_show', {'slug' : product.slug}) %}
         <div class="col s12 l4">
             <div class="col s12">
@@ -36,6 +36,8 @@
             </div>
         </div>
         {% endfor %}
+       
     </div> <!-- Fin col s8-->
 </div> <!-- Fin row global-->
+ {{ pagination.display() }}
 {% endblock %}
