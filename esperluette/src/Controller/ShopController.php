@@ -21,7 +21,7 @@ class ShopController extends AbstractController
     {
         $pagination->setEntityClass(ProductShop::class)
             ->setPage($page)
-            ->setLimit(9);
+            ->setLimit(24);
 
         return $this->render('shop/shop.html.twig', [
             'products' => $productShopRepo->findAll(),

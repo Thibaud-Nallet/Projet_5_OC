@@ -4,6 +4,10 @@ body {
     cursive;
 }
 
+main {
+    margin-bottom: 100px;
+}
+
 h1 {
     font-family: 'Poiret One',
         cursive;
@@ -24,7 +28,18 @@ h6 {
     box-shadow: none;
     background-color: white;
 }
+nav img {
+    max-width: 40px;
+    max-height: 40px;
+}
+.navLogo a {
+    padding: 10px 0px 0px 20px;
+    margin: 0px 0px;
+}
 
+.navLogo a:hover {
+    background-color: white;
+}
 .navigation li a {
     color: black;
 }
@@ -91,3 +106,38 @@ h6 {
 #registration label {
     display: block;
 }
+
+/***** FOOTER *****/
+.page-footer {
+    background-color : white;
+    color: black;
+    padding-top: 0px;
+}
+
+footer .fa-2x{
+    padding : 0px 15px;
+    color: black;
+}
+
+footer li {
+    padding : 5px 0px;
+}
+
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .reseau:hover {
+    text-decoration: none;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.page-footer .footer-copyright {
+    color: black;
+}
+

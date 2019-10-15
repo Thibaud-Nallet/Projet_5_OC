@@ -1,26 +1,66 @@
-<hr />
-<footer id="footer">
-        <div class="row">
-            <div class="col s4 offset-s1">
-                <h4>Informations</h4>
-                <ul class="nav nav-stacked">
-                    <li><a href="texte.php">CGV</a>
-                    <li><a href="texte.php">Mentions légales</a>
-                </ul>
+<footer class="page-footer">
+    <hr>
+    <div class="row">
+        <div class="col l4 offset-l1 s12 ">
+            <div class="row">
+                <h5>Esperluette</h5>
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                    officiis ut praesentium magnam repudiandae odio quisquam eligendi ea facilis! Repellat reiciendis
+                    non
+                    voluptas mollitia quasi officiis architecto eum aliquid maxime, eligendi nam animi cum molestiae
+                    odio!
+                    Fuga placeat earum eum voluptas aliquid nesciunt recusandae nostrum, quam odio impedit perspiciatis
+                    dicta!
+                </p>
             </div>
-            <div class="col s4">
-                <h4>Notre entrepôt</h4>
-                <p><i class="icon-map-marker"></i>&nbsp;Paris 75 000 - 3 rue des jardins</p>
-            </div>
-            <div class="col s2">
-                <h4>Nous contacter</h4>
-                <p><i class="icon-phone"></i>&nbsp;Tel: 02 35 00 00 00</p>
-                <p><i class="icon-print"></i>&nbsp;Fax: 02 35 00 00 00</p>
-            </div>
+
         </div>
-        <div class="row">
-            <div class="col s12 center-align">
-                <p>&copy; Copyright 2014 - DevAndClick</p>
-            </div>
+        <div class="col l2 offset-l1 s12 ">
+            <h5>Accès rapide</h5>
+            <ul>
+                <li> <a href="{{ path('home') }}">Accueil</a> </li>
+                <li> <a href="{{ path('blog') }}">Blog</a> </li>
+                <li> <a href="{{ path('product_index') }}">Boutique</a> </li>
+                <li> <a href="{{ path('home') }}">Contact</a> </li>
+            </ul>
         </div>
+        <div class="col l3 s12 ">
+            <h5>Ma boutique</h5>
+            <ul>
+                <li> <i class="fas fa-mobile-alt"></i> 06 62 50 85 67 </li>
+                <li> <i class="far fa-envelope"></i> contact@esperluette-deco.fr </li>
+                <li> <i class="fas fa-map-marker-alt"></i> Basé à Jassans-Riottier (01) </li>
+                <li> <i class="fas fa-info"></i> Plus d'informations, contactez moi </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s8 m8 offset-m1">
+            <a href="https://www.facebook.com/Esperluette-100744648003384/" class="reseau">
+                <i class="fab fa-facebook-f fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/esperluettevalorisation/" class="reseau">
+                <i class="fab fa-instagram fa-2x"></i> </a>
+            <a href="https://www.pinterest.fr/nallet0387/" class="reseau">
+                <i class="fab fa-pinterest-p fa-2x"></i>
+            </a>
+        </div>
+        <div class="col s1 m1 ">
+            <a href="{{ path('admin_login') }} " class="right"> Admin
+            </a>
+        </div>
+        <div class="col s1 m1 offset-m1">
+            <a href="#navConnect"> <i class="fas fa-caret-square-up fa-2x"></i> </a>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <div class="container center-align">
+            © 2019 Esperluette |
+            <a href="{{ path('mention_legale') }}">  Mentions Légales </a> |
+            <a href="{{ path('cgv') }}"> CGV </a> |
+            <a href="">  <em> Contactez moi </em> </a>
+        </div>
+    </div>
 </footer>

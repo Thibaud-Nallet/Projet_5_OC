@@ -2,6 +2,7 @@ h1 {
     margin: 30px 0 10px 0;
     font-size: 20px;
 }
+
 /* Pour la sidenav fixe évite de cacher derrière la sidenav. ATTENTION TOUT METTRE DANS LE MAIN */
 header,
 main,
@@ -71,38 +72,45 @@ footer {
 table span {
     font-size: 24px;
 }
+
 table img {
     max-width: 200px;
     max-height: 200px;
 }
- table i {
-     color: black;
- }
 
- .total {
-     padding-right : 10px;
- }
+table i {
+    color: black;
+}
 
- .total dl {
-     padding-right: 40px;
- }
+.total {
+    padding-right: 10px;
+}
 
- .total dt {
-     font-size: 20px;
-     font-weight: bold;
- }
- .total dd {
-     font-size: 16px;
- }
- .btnPanier {
-     padding: 0px 10px;
- }
- .btnPanier .left {
-     color: black;
- }
- .btnPanier .left:hover {
-     text-decoration: underline;
- }
+.total dl {
+    padding-right: 40px;
+}
+
+.total dt {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.total dd {
+    font-size: 16px;
+}
+
+.btnPanier {
+    padding: 0px 10px;
+}
+
+.btnPanier .left {
+    color: black;
+}
+
+.btnPanier .left:hover {
+    text-decoration: underline;
+}
+
 /*****  *****/
 .panier {
     margin-left: 100px;

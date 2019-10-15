@@ -19,25 +19,30 @@
     <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
     <!-- Style sheet Perso -->
-    <link rel="stylesheet" href="{{ asset('/css/main.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/css/admin.css')}}" type="text/css">
     {% block stylesheets %} {% endblock %}
     <!--***** TITLE *****-->
     <title> & | {% block title %}{% endblock %} </title>
 </head>
 
 <body>
-    {# Permet d'afficher les flash #}
-    {% for label, messages in app.flashes %}
-    <div class="container">
-        <div class="{{label}} ">
-            {% for message in messages %}
-            <p> {{message | raw}} </p>
-            {% endfor %}
-        </div>
-    </div>
-    {% endfor %}
 
-    {% block body %}{% endblock %}
+    {% include "admin/includes/sidenav.html.twig" %}
+
+    <main>
+        {# Permet d'afficher les flash #}
+        {% for label, messages in app.flashes %}
+        <div class="container">
+            <div class="{{label}} ">
+                {% for message in messages %}
+                <p> {{message | raw}} </p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        {% block body %}
+        {% endblock %}
+    </main>
 
     <!--***** SCRIPT *****-->
     <!--Import JQuery-->

@@ -1,0 +1,45 @@
+{% extends 'base/mainBase.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/home.css') }}" type="text/css">
+{% endblock %}
+
+{% block title %} Mention Légale {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1> Mentions légales </h1>
+    <p>Esperluette http://www.esperluette-deco.fr
+
+        Esperluette est membre de la Coopérative d’Activité et d’Emploi Ess’ain (antenne ELAN création) :
+        Gérant : Benjamin RAQUIN
+        Statut : SCIC
+        Siège social : 171 avenue San Severo 01000 BOURG en BRESSE
+        RCS : Bourg en Bresse N°830718714
+        Code APE : 8299Z
+        SIRET : 830 718 714 00017
+        TVA : FR47 830718714
+        La gestion opérationnelle du site http://www.esperluette-deco.fr est assurée par : Pascale NALLET
+        pascalenallet@yahoo.fr ou contact@esperluette-deco.fr
+        784 rue notre dame des champs 01480 JASSANS RIOTTIER
+        +33 6 62 50 85 67
+        L’intégralité du site est la propriété exclusive d’Esperluette
+        Directrice de la publication : Pascale NALLET
+        Web master : Thibaud NALLET
+        Hébergeur du site : 1&1 YONOS (Siège social 7 place de la gare 57201 SARREGUEMINES)
+        Le domaine d’activité de Esperluette est la vente et les prestations de service en valorisation de meubles &
+        d’objets anciens, proposés via le site vitrine : http://www.esperluette-deco.fr :
+        Une gamme de produits uniques, valorisés à base de récup, made in France. Les objets sont fabriqués à la main à
+        partir de matériaux principalement récupérés issus de glanage, de troc, de recyclerie, de brocante, de
+        vide-maison, de vide-grenier etc.
+        Des services d’animation sous forme d’ateliers individuels ou collectifs permettant de valoriser un objet
+        personnel (création, conception, conseils).
+        Interventions au domicile chez particulier moyennant frais de déplacement.
+        Un service de personnalisation, sur demande, réalisation de commande particulière : il sera établi un devis
+        ainsi qu’un cahier des charges moyennant un acompte de 50%. La production ne sera lancée qu’après règlement de
+        l’acompte et signature du cahier des charges.
+
+    Retrouvez nos CGV : <a href="{{ path('cgv')}} "> ici </a></p>
+</div>
+
+{% endblock %}

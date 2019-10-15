@@ -25,24 +25,26 @@
     <title> & | {% block title %}{% endblock %} </title>
 </head>
 
-<body> 
-    
-        {%  include "includes/navConnect.html.twig" %}
-    
- 
-    {# Permet d'afficher les flash #}
-    {% for label, messages in app.flashes %}
-    <div class="container">
-        <div class="{{label}} ">
-            {% for message in messages %}
-            <p> {{message | raw}} </p>
-            {% endfor %}
+<body>
+
+    {% include "includes/navConnect.html.twig" %}
+
+    <main>
+        {# Permet d'afficher les flash #}
+        {% for label, messages in app.flashes %}
+        <div class="container">
+            <div class="{{label}} ">
+                {% for message in messages %}
+                <p> {{message | raw}} </p>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    {% endfor %}
+        {% endfor %}
 
-    {% block body %}{% endblock %}
-
+        {% block body %}{% endblock %}
+    </main>
+    
+    {% include "includes/footer.html.twig" %}
     <!--***** SCRIPT *****-->
     <!--Import JQuery-->
     <script src="https://code.jquery.com/jquery-2.2.4.js"
