@@ -89,14 +89,6 @@ footer {
     background-color: white;
 }
 
-.fa-chevron-circle-right {
-    
-}
-
-.fa-chevron-circle-left {
-   
-}
-
 .fa-chevron-circle-left:hover,
 .fa-chevron-circle-right:hover {
     cursor: pointer;
