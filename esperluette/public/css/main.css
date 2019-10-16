@@ -141,3 +141,10 @@ footer .reseau:hover {
     color: black;
 }
 
+.textFooter {
+    margin-bottom: 0px;
+}
+
+.reseauFooter {
+    margin-bottom: 19px;
+}
