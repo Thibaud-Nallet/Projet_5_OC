@@ -1,8 +1,13 @@
 h1 {
-    font-family: 'Special Elite',
-        cursive;
     margin: 30px 0 10px 0;
     font-size: 20px;
+}
+
+/* Pour la sidenav fixe évite de cacher derrière la sidenav. ATTENTION TOUT METTRE DANS LE MAIN */
+header,
+main,
+footer {
+    padding-left: 300px;
 }
 
 /***** SIDENAV *****/
@@ -15,11 +20,6 @@ h1 {
 .category li a {
     font-size: 12px;
     margin-left: 20px;
-}
-
-li {
-    font-family: 'Special Elite',
-        cursive;
 }
 
 .category li>a:hover {
@@ -59,6 +59,85 @@ li {
     font-family: 'Special Elite', cursive;
 }
 
+/***** SHOW *****/
+.descProduct {
+    padding: 20px 40px;
+}
+
+.carousel {
+    position: relative;
+    z-index: 1;
+}
+
+.carousel .indicators .indicator-item {
+    background-color: black;
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: #00897b;
+}
+
+.fa-chevron-circle-left,
+.fa-chevron-circle-right {
+    color: #00897b;
+    border-radius: 50%;
+    position: relative;
+    top: 150px;
+    z-index: 2;
+    border: 2px solid white;
+    font-size: 30px;
+    background-color: white;
+}
+
+.fa-chevron-circle-left:hover,
+.fa-chevron-circle-right:hover {
+    cursor: pointer;
+}
+
+/***** PANIER *****/
+table span {
+    font-size: 24px;
+}
+
+table img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+table i {
+    color: black;
+}
+
+.total {
+    padding-right: 10px;
+}
+
+.total dl {
+    padding-right: 40px;
+}
+
+.total dt {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.total dd {
+    font-size: 16px;
+}
+
+.btnPanier {
+    padding: 0px 10px;
+}
+
+.btnPanier .left {
+    color: black;
+}
+
+.btnPanier .left:hover {
+    text-decoration: underline;
+}
+
+/*****  *****/
 .panier {
     margin-left: 100px;
 }
@@ -78,7 +157,6 @@ li {
 }
 
 .titleCard {
-    font-family: 'Special Elite', cursive;
     font-size: 14px;
 }
 
@@ -100,6 +178,15 @@ li {
     margin-bottom: 20px;
 }
 
-#search {
-    margin-left: 52px;
+@media only screen and (max-width : 992px) {
+
+    header,
+    main,
+    footer {
+        padding-left: 0;
+    }
+
+    .mobileNone {
+        display: none;
+    }
 }

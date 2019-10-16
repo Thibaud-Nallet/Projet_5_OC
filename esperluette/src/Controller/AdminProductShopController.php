@@ -23,7 +23,7 @@ class AdminProductShopController extends AbstractController
     public function index(ProductShopRepository $repo, $page, Pagination $pagination)
     {
         $pagination->setEntityClass(ProductShop::class)
-            ->setPage($page)
+            ->setPage($page) 
             ->setLimit(10)
             ;
 

@@ -2,10 +2,12 @@ $(document).ready(function () {
     $('.carousel').carousel({
         indicators: true,
     });
-    $('.prev').click(() => {
+
+    $('.fa-chevron-circle-left').click(function () {
         $('.carousel').carousel('prev');
-    })
-    $('.next').click(() => {
+    }); 
+
+    $('.fa-chevron-circle-right').click(() => {
         $('.carousel').carousel('next');
     })
 

@@ -1,30 +1,63 @@
-{% extends 'base.html.twig' %}
+{% extends 'achat/base.html.twig' %}
 
-{% block title %}Hello SecurityController!{% endblock %}
+{% block title %} Connexion {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/security.css')}}" type="text/css">
+{% endblock %}
 
 {% block body %}
+
 <div class="container">
-    <h1 class="center-align"> Connexion sur le site </h1>
-
-    <div class="row">
-        {% if hasError %}
-        <div class="alert"> Authentification échouéee </div>
-        {% endif %}
-        <form action="{{ path('security_login') }}" method="post">
+    <h1> Connexion </h1>
+    <hr>
+    <section id="login">
         <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="Email" required name="_username" type="text" class="validate" value="{{username}}" required>
+            {% if hasError %}
+            <div class="alert">
+                <p> Votre authentification a échouée ! </p>
             </div>
-            <div class="input-field col s6">
-                <input placeholder="Password" required name="_password" type="password" class="validate" required>
+            {% endif %}
+            <div class="col s12">
+                <div class="col s12 m5 card hoverable">
+                    <h4>Pas encore inscrit ?</h4>
+                    <p>
+                        Nous vous invitons à vous inscrire <br />
+                        afin de passer votre commande, poster des commentaires ...
+                    </p>
+                    <br>
+                    <a href="{{ path('security_registration') }}" class="btn btn-registration">S'inscrire</a>
+                </div>
+                <div class="col s12 m5 offset-m2 card hoverable">
+                    <h4> Connexion</h4>
+                    <form action="{{ path('security_login') }}" method="post">
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="username" name="_username" type="email" class="validate" value="{{username}}"
+                                    required>
+                                <label for="username"> Entrez votre identifiant </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="password" name="_password" type="password" class="validate" required>
+                                <label for="password"> Entrez votre mot de passe </label>
+                            </div>
+                        </div>
+                        <div class="row center-align">
+                            <button type="submit" class="btn"> Connexion </button>
+                            <div class="row lost">
+                            <a href="{{ path('security_editPassword') }}"> <span class="lost aBlack"> Mot de passe perdu ? </span></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s10">
+                    <a class="aBlack" href="{{ path('home') }}"> Retour à l'accueil </a>
+                   
+                </div>
             </div>
         </div>
-        
-        <div class="row">
-            <button type="submit" class="btn waves-effect waves-light"> Connexion </button>
-        </div>
-    </div>
-
-    </form>
+    </section>
 </div>
 {% endblock %}

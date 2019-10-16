@@ -1,0 +1,70 @@
+h1 {
+    margin: 40px 0px 20px 20px;
+    font-size: 50px;
+}
+
+.alert {
+    background-color: #66bb6a;
+    height: 75px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.alert p {
+    margin: auto;
+    font-size: 18px;
+}
+
+/***** FORMULAIRE DE CONNEXION *****/
+#login {
+    margin-top: 50px;
+}
+
+#login .card h4 {
+    padding: 10px 10px;
+    font-size: 26px;
+}
+
+#login .card p {
+    padding: 0px 30px;
+}
+
+#login .card form {
+    padding: 0px 50px;
+}
+
+#login .input-field {
+    margin-bottom: 0em;
+}
+
+#login .card .btn-registration {
+    margin: 0px 0px 30px 30px;
+}
+
+.aBlack {
+    color: black;
+}
+
+.aBlack:hover {
+    text-decoration: underline;
+}
+
+#login .lost {
+   margin-top: 10px;
+   font-size : 10px;
+   font-style: italic;
+}
+
+/***** FORMULAIRE D'INSCRIPTION *****/
+#register .card {
+    margin-top : 50px;
+}
+
+#register .card form{
+    padding: 30px 60px;
+}
+
+.fa-sm {
+    font-size: .5em;
+}

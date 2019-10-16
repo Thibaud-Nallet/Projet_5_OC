@@ -27,7 +27,9 @@
 
 <body>
 
-    {% include "includes/navConnect.html.twig" %}
+    <header>
+        {% include "includes/navConnect.html.twig" %}
+    </header>
 
     <main>
         {# Permet d'afficher les flash #}
@@ -43,8 +45,11 @@
 
         {% block body %}{% endblock %}
     </main>
-    
-    {% include "includes/footer.html.twig" %}
+
+    <footer>
+        {% include "includes/footer.html.twig" %}
+    </footer>
+
     <!--***** SCRIPT *****-->
     <!--Import JQuery-->
     <script src="https://code.jquery.com/jquery-2.2.4.js"

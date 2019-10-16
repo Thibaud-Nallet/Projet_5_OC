@@ -12,11 +12,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\AuthenticationEvents;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class SecurityController extends AbstractController
@@ -54,6 +52,7 @@ class SecurityController extends AbstractController
         //Affiche une erreur si l'inscription échoue
         $error = $utils->getLastAuthenticationError();
         $username = $utils->getLastUsername();
+        
         return $this->render('security/login.html.twig', [
             'hasError' => $error !==  null,
             'username' => $username
@@ -91,7 +90,6 @@ class SecurityController extends AbstractController
     /**
      * Permet de modifier le mot de passe
      * @Route("/profil/edit-password", name="security_editPassword")
-     * @IsGranted("ROLE_USER")
      * @return Response
      */
     public function updatePassword(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder) {

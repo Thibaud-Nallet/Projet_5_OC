@@ -9,36 +9,36 @@ use App\Repository\CarousselRepository;
 
 class HomeController extends AbstractController
 {
-
-    /**
-     * @var CarousselRepository
-     */
-    private $repository;
-
-    public function __construct(CarousselRepository $repository)
-    {
-        $this->repository = $repository;
-    }
-
-
     /**
      * @Route("/", name="home")
      */
     public function index()
     {
-        /* COMMANDE POUR INSERER MANUELLEMENT DANS LA BDD
-        $caroussel = new Caroussel;
-        $caroussel->setSrcImage('images/logo.png');
-        $caroussel->setAltImage('Image !!');
-        $entity_manager = $this->getDoctrine()->getManager();
-        $entity_manager->persist($caroussel);
-        $entity_manager->flush();*/
+        return $this->render('home/index.html.twig');
+    }
 
-        $caroussel = $this->repository->find(1);
-       
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-            'caroussel' => $caroussel
-        ]);
+    /**
+     * Route pour la page des mentions légales
+     * @Route("/mention-legale", name="mention_legale")
+     */
+    public function mentionLegale() {
+        return $this->render('home/mentionLegale.html.twig');
+    }
+
+    /**
+     * Route pour les conditions générales de vente
+     * @Route("conditions-generales-de-vente", name="cgv")
+     */
+    public function cgv() {
+        return $this->render('home/cgv.html.twig');
+    }
+
+    /**
+     * Route pour les conditions générales de vente
+     * @Route("politique-de-confidentialte", name="confidentialite")
+     */
+    public function confidentialite()
+    {
+        return $this->render('home/confidentialite.html.twig');
     }
 }

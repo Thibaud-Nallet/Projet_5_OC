@@ -11,10 +11,10 @@ class ApplicationType extends AbstractType {
      * @param array $options
      * @return array
      */
-    protected function getConfiguration($label, $options = [])
+    protected function getConfiguration($label)
     {
         return array_merge([
             'label' => $label
-        ], $options);
+        ]);
     }
 }

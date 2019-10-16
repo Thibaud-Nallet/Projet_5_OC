@@ -1,5 +1,11 @@
 body {
     overflow-x: hidden;
+    font-family: 'Special Elite',
+    cursive;
+}
+
+main {
+    margin-bottom: 100px;
 }
 
 h1 {
@@ -9,8 +15,6 @@ h1 {
 }
 
 h2 {
-    font-family: 'Special Elite',
-        cursive;
     margin-top: 0px;
     font-size: 18px;
 }
@@ -24,15 +28,25 @@ h6 {
     box-shadow: none;
     background-color: white;
 }
+nav img {
+    max-width: 40px;
+    max-height: 40px;
+}
+.navLogo a {
+    padding: 10px 0px 0px 20px;
+    margin: 0px 0px;
+}
 
+.navLogo a:hover {
+    background-color: white;
+}
 .navigation li a {
-    font-family: 'Special Elite',
-        cursive;
     color: black;
 }
 
 .navigation li a .fab,
-.navigation li a .fas {
+.navigation li a .fas,
+.navigation strong {
     color: gray;
 }
 
@@ -57,4 +71,80 @@ h6 {
 }
 #dropdown1 {
     top: -60px;
+}
+
+/* Message de validation après un succés flash */
+.success,
+.alert {
+    background-color: #66bb6a;
+    height: 75px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.success p,
+.alert p {
+    margin: auto;
+    font-size: 18px;
+}
+
+.avatarNav {
+    max-width: 40px;
+    max-height: 40px;
+    margin: auto;
+    margin-right: 10px;
+}
+.dropdown-trigger{
+    display: inline-flex;
+}
+
+.input-field .required {
+    display: none;
+}
+
+#registration label {
+    display: block;
+}
+
+/***** FOOTER *****/
+.page-footer {
+    background-color : white;
+    color: black;
+    padding-top: 0px;
+}
+
+footer .fa-2x{
+    padding : 0px 15px;
+    color: black;
+}
+
+footer li {
+    padding : 5px 0px;
+}
+
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .reseau:hover {
+    text-decoration: none;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.page-footer .footer-copyright {
+    color: black;
+}
+
+.textFooter {
+    margin-bottom: 0px;
+}
+
+.reseauFooter {
+    margin-bottom: 19px;
 }

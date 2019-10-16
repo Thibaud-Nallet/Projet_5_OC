@@ -4,5 +4,5 @@ $(document).ready(function () {
     });
     setInterval(function () {
         $('.carousel').carousel('next');
-    }, 5000);
+    }, 3000);
 });

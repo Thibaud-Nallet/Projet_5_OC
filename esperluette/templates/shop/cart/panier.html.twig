@@ -1,0 +1,83 @@
+{% extends 'base/sidenavBase.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/shop.css')}}" type="text/css">
+{% endblock %}
+
+{% block title %} Panier {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col s12 m10 offset-m1">
+        <form class="card">
+            {% if items | length > 0 %}
+            <table class="striped centered">
+                <thead>
+                    <tr>
+                        <th> <span> Votre panier </span></th>
+                        <th>Produit</th>
+                        <th>Prix HT </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('product_show', {'slug' : item.product.slug}) }}">
+                                <img src="{{ item.product.coverImage }}" alt="{{ item.product.title }}">
+                            </a>
+                        </td>
+                        <td>
+                            {{ item.product.title }}
+                        </td>
+                        <td>
+                            {{ item.product.price }}
+                        </td>
+                        <td>
+                            <a href="{{ path('cart_remove', {'id' : item.product.id }) }}">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p> Votre panier est vide </p>
+            {% endif %}
+        </form>
+        {% set tva = (total / 120) * 20 %}
+        {% set totalHt = total - tva %}
+        <div class="row total">
+            <div class="col m3 offset-m9 card ">
+                <dl class="right">
+                    <dt>Total HT :</dt>
+                    <dd>{{ totalHt | number_format(2) }} €</dd>
+                    <dt>TVA :</dt>
+                    <dd>{{ tva | number_format(2) }} €</dd>
+                    <dt>Total:</dt>
+                    <dd>{{ total | number_format(2) }} €</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row btnPanier">
+            <a href="{{ path('product_index') }}" class="left">Continuer mes achats</a>
+           
+                <a href="{{ path('livraison') }}" class="btn btn-success right">Valider mon
+                    panier</a>
+           
+            
+           {#
+             {% if not app.user %}
+              {% else %}
+              <a href="{{ path('buying') }}" class="btn btn-success right">Valider mon
+                  panier</a>
+              {% endif %}
+            #}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
     <!-- Style sheet Perso -->
-    <link rel="stylesheet" href="{{ asset('/css/main.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/css/admin.css')}}" type="text/css">
     {% block stylesheets %} {% endblock %}
     <!--***** TITLE *****-->
     <title> & | {% block title %}{% endblock %} </title>
@@ -27,7 +27,7 @@
 
 <body>
 
-    {% include "includes/navConnect.html.twig" %}
+    {% include "admin/includes/sidenav.html.twig" %}
 
     <main>
         {# Permet d'afficher les flash #}
@@ -40,11 +40,10 @@
             </div>
         </div>
         {% endfor %}
-
-        {% block body %}{% endblock %}
+        {% block body %}
+        {% endblock %}
     </main>
-    
-    {% include "includes/footer.html.twig" %}
+
     <!--***** SCRIPT *****-->
     <!--Import JQuery-->
     <script src="https://code.jquery.com/jquery-2.2.4.js"
