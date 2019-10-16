@@ -32,4 +32,13 @@ class HomeController extends AbstractController
     public function cgv() {
         return $this->render('home/cgv.html.twig');
     }
+
+    /**
+     * Route pour les conditions générales de vente
+     * @Route("politique-de-confidentialte", name="confidentialite")
+     */
+    public function confidentialite()
+    {
+        return $this->render('home/confidentialite.html.twig');
+    }
 }
