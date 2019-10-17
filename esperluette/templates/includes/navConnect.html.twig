@@ -22,8 +22,7 @@
             </ul>
             <ul class="right">
                 <li>
-                    <a href="{{ path('cart_index') }} ">
-                        <strong> {# {{productTotal}} #} </strong> <i class="fas fa-shopping-basket fa-sm"></i> Panier
+                    <a href="{{ path('cart_index') }} " id="cartConnect">
                     </a>
                 </li> 
                 {% if not app.user %}
@@ -38,7 +37,7 @@
                     <a class="dropdown-trigger" data-target="dropdown1">
                             <img class="circle avatarNav" src="{{app.user.picture}}" alt="avatar de {{app.user.firstname}}">
                         
-                        <div>{{app.user.firstname}} </div>
+                        <div class="name">{{app.user.firstname}} </div>
                         
                         <i class="material-icons right">arrow_drop_down</i>
                     </a></div>

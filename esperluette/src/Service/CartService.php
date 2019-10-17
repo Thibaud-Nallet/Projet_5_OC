@@ -3,18 +3,20 @@
 namespace App\Service;
 
 use App\Repository\ProductShopRepository;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CartService
 {
-
     protected $session;
     protected $productShopRepo;
+    private $manager;
 
-    public function __construct(SessionInterface $session, ProductShopRepository $productShopRepo)
+    public function __construct(SessionInterface $session, ProductShopRepository $productShopRepo, ObjectManager $manager)
     {
         $this->session = $session;
         $this->productShopRepo = $productShopRepo;
+        $this->manager = $manager;
     }
 
 

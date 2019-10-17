@@ -70,6 +70,11 @@ class User implements UserInterface
     private $slug;
 
     /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Adress", mappedBy="idUser")
+     */
+    private $adresses;
+
+    /**
      * Permet d'initialiser le slug
      * @ORM\PrePersist
      * @ORM\PreUpdate
@@ -85,6 +90,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->userRoles = new ArrayCollection();
+        $this->adresses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -198,6 +204,37 @@ class User implements UserInterface
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Adress[]
+     */
+    public function getAdresses(): Collection
+    {
+        return $this->adresses;
+    }
+
+    public function addAdress(Adress $adress): self
+    {
+        if (!$this->adresses->contains($adress)) {
+            $this->adresses[] = $adress;
+            $adress->setIdUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdress(Adress $adress): self
+    {
+        if ($this->adresses->contains($adress)) {
+            $this->adresses->removeElement($adress);
+            // set the owning side to null (unless already changed)
+            if ($adress->getIdUser() === $this) {
+                $adress->setIdUser(null);
+            }
+        }
 
         return $this;
     }

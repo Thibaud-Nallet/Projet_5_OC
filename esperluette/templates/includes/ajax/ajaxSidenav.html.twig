@@ -1,0 +1,7 @@
+{% for category in categories %}
+<li>
+    <a href="{{ path('product_show_category', {'id' : category.id}) }}">
+        {{ category.title | truncate(30) }}
+    </a>
+</li>
+{% endfor %}

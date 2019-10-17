@@ -1,0 +1,20 @@
+{% extends 'base/sidenavBase.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/shop.css')}}" type="text/css">
+{% endblock %}
+
+{% block title %} Boutique {% endblock %}
+
+{% block body %}
+
+Hello category : {{category.title}}
+
+{% for product in productCategory %}
+
+{{product.id}}
+
+{% endfor %}
+
+
+{% endblock %}

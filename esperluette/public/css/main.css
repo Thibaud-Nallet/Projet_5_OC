@@ -32,6 +32,9 @@ nav img {
     max-width: 40px;
     max-height: 40px;
 }
+.name {
+    padding-right: 40px;
+}
 .navLogo a {
     padding: 10px 0px 0px 20px;
     margin: 0px 0px;
