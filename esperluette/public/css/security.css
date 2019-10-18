@@ -44,10 +44,20 @@ h1 {
 
 .aBlack {
     color: black;
+    background-color : #eeeeee;
+    font-family: 'Special Elite', cursive;
+}
+
+.aAccueil {
+    color: black;
 }
 
 .aBlack:hover {
-    text-decoration: underline;
+     background-color : #b2dfdb;
+}
+
+.aAccueil:hover{
+    border : 3px solid #b2dfdb;
 }
 
 #login .lost {
@@ -67,4 +77,12 @@ h1 {
 
 .fa-sm {
     font-size: .5em;
+}
+
+.aHome {
+    color: black;
+}
+
+.aHome:hover {
+    color : #b2dfdb;
 }

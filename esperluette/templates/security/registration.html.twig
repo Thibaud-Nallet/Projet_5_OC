@@ -9,10 +9,9 @@
 
 {% block body %}
 <div class="container">
-   
     <h1> 
         Inscription 
-        <a class="aBlack right tooltipped" data-position="bottom" data-tooltip="Revenir à l'accueil"
+        <a class="aHome right tooltipped" data-position="bottom" data-tooltip="Revenir à l'accueil"
             href="{{ path('home') }}">
             <i class="fas fa-home fa-sm"> </i>
         </a>
@@ -25,7 +24,7 @@
                     {{ form_start(form) }}
                     {{form_row(form)}}
                     <div class="row center-align">
-                        <button type="submit" class="btn waves-effect waves-light"> Inscription </button>
+                        <button type="submit" class="aBlack btn waves-effect waves-light"> Inscription </button>
                     </div>
                 </div>
                 {{ form_end(form) }}

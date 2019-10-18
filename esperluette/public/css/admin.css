@@ -27,8 +27,9 @@ footer {
 }
 
 /* Message de validation après un succés flash */
-.success {
-    background-color: #66bb6a;
+.success,
+.success .alert {
+    background-color: #b2dfdb !important;
     height: 75px;
     border-radius: 5px;
     margin-bottom: 20px;

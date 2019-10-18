@@ -14,7 +14,7 @@ h1 {
     margin-top: 0px;
 }
 
-h2 {
+h2 { 
     margin-top: 0px;
     font-size: 18px;
 }
@@ -79,9 +79,10 @@ nav img {
 /* Message de validation après un succés flash */
 .success,
 .alert {
-    background-color: #66bb6a;
+    background-color: #b2dfdb;
     height: 75px;
     border-radius: 5px;
+    margin-top: 10px;
     margin-bottom: 20px;
     display: flex;
 }
@@ -131,13 +132,17 @@ footer a {
 }
 
 footer a:hover {
-    text-decoration: underline;
+    border : 3px solid #b2dfdb;
+    padding: 5px;
 }
 
 footer .reseau:hover {
     text-decoration: none;
-    background-color: #eee;
-    border-radius: 50%;
+    border: none;
+    color: #b2dfdb;
+}
+footer .reseau i:hover {
+    color: #b2dfdb;
 }
 
 .page-footer .footer-copyright {
