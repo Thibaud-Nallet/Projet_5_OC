@@ -19,7 +19,6 @@ class CartService
         $this->manager = $manager;
     }
 
-
     public function add(int $id)
     {
         $panier = $this->session->get('panier', []);
@@ -63,4 +62,16 @@ class CartService
         $productTotal = count($this->getFullCart());
         return $productTotal;
     }
+
+    public function getPort()
+    {
+        $port = 0;
+        foreach ($this->getFullCart() as $item) {
+            $port += $item['product']->getFraisLivraison() /* * $item['quantity']*/;
+            
+        }
+        return $port;
+    }
+
+
 }

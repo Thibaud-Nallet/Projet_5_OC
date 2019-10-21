@@ -7,60 +7,90 @@
 
 {% block body %}
 <div class="container">
+    <section id="recap">
+        <h2> Récapitulatif de vos achats </h2>
+        <hr>
+        <div class="row">
+            <div class="col m4">
+                <div class="card">
+                    <h4> Adresse de livraison/facturation </h4> <br>
+                    <div class="recapAdresse">
+                        {{user.nameLivraison}} {{user.firstNameLivraison}} <br>
+                        {{user.adressFirst}} <br>
+                        {{user.adressSecond}} <br>
+                        {{user.codeCity}} {{user.city}} <br>
+                        +33{{user.phone}} <br>
+                    </div>
+                </div>
+            </div>
 
-	<div  class = " conteneur " >
-		<div  class = " row " >
-               
-				<div  class = " span9 " >
-                    <h2 > Valider mon parnier </h2 >
-                    <formulaire >
-                    <table  class = "table-rayée table-survol " >
-                        <thead >
-                            <tr >
-                                <th > Références </th >
-                                <th > Quantité </th >
-                                <th > Prix unitaire </th >
-                                <th > Total HT </th >
-                            </tr >
-                        </thead >
-                        <tbody >
-                            <tr >
-                                <td > AB29837 </td >
-                                <td >
-                                    2
-                                </td >
-                                <td > 333,33 € </td >
-                                <td > 333,33 € </td >
-                            </tr >
-                            <tr >
-                                <td > AC34423 </td >
-                                <td >
-                                    1
-                                </td >                                
-                                <td > 333,33 € </td >
-                                <td > 666,66 € </td >
-                            </tr >
-                        </tbody >
-                    </table >
-                </form >
-    
-                <dl  class = " dl-horizontal pull-right " >
-                    <dt > Total HT: </dt >
-                    <dd > 799,99 € </dd >
-                    
-                    <dt > TVA: </dt >
-                    <dd > 200 € </dd >
-    
-                    <dt > Total: </dt >
-                    <dd > 999,99 € TTC </dd >
-                </dl >
-                <div  class = " clearfix " > </div >
-                <a  href = " # "  class = " btn pull-droite BTN-succès " > Payeur </a >
-            </div >
-		
-		</div >
-	</div >
-
+            <div class="col m8">
+                <div class="card">
+                    <form>
+                        <table class="striped centered">
+                            <thead>
+                                <tr>
+                                    <th> </th>
+                                    <th>Produit</th>
+                                    <th>Quantité</th>
+                                    <th>Prix </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in items %}
+                                <tr>
+                                    <td>
+                                        <a href="{{ path('product_show', {'slug' : item.product.slug}) }}">
+                                            <img src="{{ item.product.coverImage }}" alt="{{ item.product.title }}">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {{ item.product.title }}
+                                    </td>
+                                    <td> 1 </td>
+                                    <td>
+                                        {{ item.product.price }}
+                                    </td>
+                                    {% endfor %}
+                            </tbody>
+                        </table>
+                    {% set totalPort = total + port %}
+                    <div class="col m3 offset-m10 card total">
+                        <dl class="right">
+                            <dt> Total :</dt>
+                            <dd> {{ total | number_format(2) }} €</dd>
+                            <dt> Frais de port :</dt>
+                            <dd> {{ port | number_format(2) }} €</dd>
+                            <dt> Total:</dt>
+                            <dd> {{ totalPort | number_format(2) }} €</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row right">
+            <div class="accept">
+                <p> J'accepte les
+                    <a href="{{path('cgv')}}"> conditions générales de vente </a>
+                </p>
+                <label>
+                    <input type="checkbox" class="cgv" required />
+                    <span></span>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m3 offset-m9 achat">
+                <button type="submit" class="btn waves-effect waves-light aBlack"> Valider ma commande
+                </button>
+            </div>
+        </div>
+        </form>
+    </section>
 </div>
 
+
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('/js/achat.js') }}"></script>
 {% endblock %}

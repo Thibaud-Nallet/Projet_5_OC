@@ -70,11 +70,6 @@ class User implements UserInterface
     private $slug;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Adress", mappedBy="idUser")
-     */
-    private $adresses;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $nameLivraison;

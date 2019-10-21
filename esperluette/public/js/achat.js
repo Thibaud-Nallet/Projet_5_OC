@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     $('.formAdress').hide();
+    $('.achat').hide();
 
     $('.liv').click(() => {
 
@@ -36,5 +37,14 @@ $(document).ready(function () {
             $(this).show();
         });
     });
+
+    $('.cgv').click(() => {
+        $('.achat').toggle(() => {
+            $(this).hide();
+        }, () => {
+            $(this).show();
+        });
+    });
+
 
 });

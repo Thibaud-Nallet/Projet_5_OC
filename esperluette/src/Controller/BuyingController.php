@@ -3,7 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Adress;
+use App\Entity\User;
 use App\Form\AdressUserType;
+use App\Repository\ProductShopRepository;
+use App\Repository\UserRepository;
+use App\Service\CartService;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,7 +41,15 @@ class BuyingController extends AbstractController
      * @Route("/panier/recap", name="recap")
      * @IsGranted("ROLE_USER")
      */
-    public function recap() {
-        return $this->render('achat/recap/recap.html.twig');
+    public function recap(UserRepository $user, CartService $cartService) {
+        $user = $this->getUser();
+
+        
+        return $this->render('achat/recap/recap.html.twig', [
+            'user' => $user,
+            'items' => $cartService->getFullCart(),
+            'total' => $cartService->getTotal(),
+            'port' => $cartService->getPort()
+        ]);
     }
 }
