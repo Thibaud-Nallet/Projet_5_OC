@@ -1,0 +1,19 @@
+/***** LIVRAISON *****/
+#adress h4 {
+    font-size: 18px;
+}
+
+.renseignement,
+.fAdress {
+    display: none;
+}
+
+#adress label,
+#adress h4 {
+    padding-left: 20px;
+}
+
+#adress form {
+    padding : 20px 40px;
+}
+

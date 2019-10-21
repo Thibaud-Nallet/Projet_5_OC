@@ -75,6 +75,51 @@ class User implements UserInterface
     private $adresses;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $nameLivraison;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $firstNameLivraison;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adressFirst;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adressSecond;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $city;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $codeCity;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $country;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $moreInfo;
+
+    /**
      * Permet d'initialiser le slug
      * @ORM\PrePersist
      * @ORM\PreUpdate
@@ -235,6 +280,114 @@ class User implements UserInterface
                 $adress->setIdUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNameLivraison(): ?string
+    {
+        return $this->nameLivraison;
+    }
+
+    public function setNameLivraison(?string $nameLivraison): self
+    {
+        $this->nameLivraison = $nameLivraison;
+
+        return $this;
+    }
+
+    public function getFirstNameLivraison(): ?string
+    {
+        return $this->firstNameLivraison;
+    }
+
+    public function setFirstNameLivraison(?string $firstNameLivraison): self
+    {
+        $this->firstNameLivraison = $firstNameLivraison;
+
+        return $this;
+    }
+
+    public function getAdressFirst(): ?string
+    {
+        return $this->adressFirst;
+    }
+
+    public function setAdressFirst(?string $adressFirst): self
+    {
+        $this->adressFirst = $adressFirst;
+
+        return $this;
+    }
+
+    public function getAdressSecond(): ?string
+    {
+        return $this->adressSecond;
+    }
+
+    public function setAdressSecond(?string $adressSecond): self
+    {
+        $this->adressSecond = $adressSecond;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getCodeCity(): ?int
+    {
+        return $this->codeCity;
+    }
+
+    public function setCodeCity(?int $codeCity): self
+    {
+        $this->codeCity = $codeCity;
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?string $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    public function getPhone(): ?int
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?int $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getMoreInfo(): ?string
+    {
+        return $this->moreInfo;
+    }
+
+    public function setMoreInfo(?string $moreInfo): self
+    {
+        $this->moreInfo = $moreInfo;
 
         return $this;
     }

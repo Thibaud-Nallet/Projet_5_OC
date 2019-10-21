@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Adress;
-use App\Form\AdressType;
+use App\Form\AdressUserType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,17 +18,17 @@ class BuyingController extends AbstractController
      */
     public function livraison(Request $request, ObjectManager $manager)
     {
-        $adress = new Adress();
-        $form = $this->createForm(AdressType::class, $adress);
+        $adressUser = $this->getUser();
+        $form = $this->createForm(AdressUserType::class, $adressUser);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $manager->persist($adress);
+            $manager->persist($adressUser);
             $manager->flush();
             return $this->redirectToRoute('recap');
         }
     
         return $this->render('achat/livraison/livraison.html.twig', [
-            'formAdress' => $form->createView()
+            'form' => $form->createView()
         ]);
     }
 

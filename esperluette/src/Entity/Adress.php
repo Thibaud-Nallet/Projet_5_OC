@@ -57,9 +57,14 @@ class Adress
     private $phone;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="adresses")
+     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="adresses")
      */
     private $idUser;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $moreInfo;
 
     public function getId(): ?int
     {
@@ -170,6 +175,18 @@ class Adress
     public function setIdUser(?User $idUser): self
     {
         $this->idUser = $idUser;
+
+        return $this;
+    }
+
+    public function getMoreInfo(): ?string
+    {
+        return $this->moreInfo;
+    }
+
+    public function setMoreInfo(?string $moreInfo): self
+    {
+        $this->moreInfo = $moreInfo;
 
         return $this;
     }

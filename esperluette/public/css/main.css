@@ -156,3 +156,14 @@ footer .reseau i:hover {
 .reseauFooter {
     margin-bottom: 19px;
 }
+
+/* Bouton de soumission */
+.aBlack {
+    color: black;
+    background-color: #eeeeee;
+    font-family: 'Special Elite', cursive;
+}
+
+.aBlack:hover {
+    background-color: #b2dfdb;
+}

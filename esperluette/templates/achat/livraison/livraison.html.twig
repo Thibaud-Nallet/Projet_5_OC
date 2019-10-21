@@ -1,27 +1,90 @@
 {% extends 'base/mainBase.html.twig' %}
-
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/css/achat.css')}}" type="text/css">
+{% endblock %}
 {% block title %} Livraison {% endblock %}
-{% form_theme formAdress 'includes/formTheme.html.twig' %}
+{% form_theme form 'includes/formTheme.html.twig' %}
 
 {% block body %}
 <div class="container">
-    <section class="adress">
-        <h2> Renseignez votre adresse de livraison </h2>
+    <section id="adress">
+        <h2 class="choix"> Choisissez votre mode de livraison </h2>
+        <h2 class="renseignement"> Renseignez votre adresse de livraison </h2>
         <hr>
-        <div class="container">
+        <div class="container ">
             <div class="row">
-                <div class="card hoverable">
-                    {{ form_start(formAdress) }}
-                    {{form_row(formAdress)}}
-                    <div class="row center-align">
-                        <button type="submit" class="btn waves-effect waves-light"> Valider l'adresse de livraison
-                        </button>
+                <div class="col m6 livre">
+                    <div class="card hoverable">
+                        <div class="row">
+                            <div class="col s1">
+                                <p>
+                                    <label>
+                                        <input type="checkbox" class="liv" />
+                                        <span></span>
+                                    </label>
+                                </p>
+                            </div>
+                            <div class="col s11">
+                                <h4> Livraison à domicile </h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                {{ form_end(formAdress) }}
+                <div class="col m6 retrait">
+                    <div class="card hoverable">
+                        <div class="row">
+                            <div class="col s1">
+                                <p>
+                                    <label>
+                                        <input type="checkbox" class="ret" />
+                                        <span></span>
+                                    </label>
+                                </p>
+                            </div>
+                            <div class="col s11">
+                                <h4> Retrait à l'atelier </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="row">
+                <div class="col s12 formAdress">
+                    <div class="card hoverable">
+                        {{ form_start(form) }}
+                        <div class="row">
+                            <div class="col s6"> {{form_row(form.nameLivraison) }} </div>
+                            <div class="col s6"> {{form_row(form.firstNameLivraison)}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col s8">{{form_row(form.phone) }} </div>
+                        </div>
+                        <div class="row"> {{form_row(form.adressFirst) }} </div>
+                        <div class="row"> {{form_row(form.adressSecond) }} </div>
+                        <div class="row">
+                            <div class="col s3">
+                                {{form_row(form.codeCity) }}
+                            </div>
+                            <div class="col s6"> {{form_row(form.city) }}</div>
+                            <div class="col s3"> {{form_row(form.country) }}</div>
+                        </div>
+                        <div class="row"> {{form_row(form.moreInfo) }} </div>
+                        <div class="row center-align">
+                            <button type="submit" class="btn waves-effect waves-light aBlack"> Valider l'adresse de livraison
+                            </button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+
         </div>
-    </section>
+</div>
+</section>
 </div>
 
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('/js/achat.js') }}"></script>
 {% endblock %}

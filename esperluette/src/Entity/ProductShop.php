@@ -75,6 +75,11 @@ class ProductShop
      */
     private $categoryShop;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $fraisLivraison;
+
     public function __construct()
     {
         $this->imagesShop = new ArrayCollection();
@@ -221,6 +226,18 @@ class ProductShop
     public function setCategoryShop(?CategoryShop $categoryShop): self
     {
         $this->categoryShop = $categoryShop;
+
+        return $this;
+    }
+
+    public function getFraisLivraison(): ?int
+    {
+        return $this->fraisLivraison;
+    }
+
+    public function setFraisLivraison(?int $fraisLivraison): self
+    {
+        $this->fraisLivraison = $fraisLivraison;
 
         return $this;
     }

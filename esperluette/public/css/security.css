@@ -48,13 +48,14 @@ h1 {
     font-family: 'Special Elite', cursive;
 }
 
+.aBlack:hover {
+     background-color : #b2dfdb;
+}
+
 .aAccueil {
     color: black;
 }
 
-.aBlack:hover {
-     background-color : #b2dfdb;
-}
 
 .aAccueil:hover{
     border : 3px solid #b2dfdb;
