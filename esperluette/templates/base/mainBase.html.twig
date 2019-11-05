@@ -12,10 +12,10 @@
     <!-- Style sheet Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!--Import Materialize-->
+    <!-- Import Materialize
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Style sheet Google Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link href="{{asset('/materialize/css/materialize.css')}}" <!-- Style sheet Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
     <!-- Style sheet Perso -->
@@ -51,13 +51,14 @@
     </footer>
 
     <!--***** SCRIPT *****-->
-    <!--Import JQuery-->
+    <!--Import JQuery
     <script src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-    <!--Import Materialize-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script> -->
+    <script src="{{asset('/js/jquery.js')}} "></script>
+    <!--Import Materialize
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+    <script src="{{ asset('/materialize/js/materialize.js')}}"></script>
     <!--Import Perso-->
-    <script src="{{ asset('/js/ajax.js')}}"></script>
     <script src="{{ asset('/js/script.js')}}"></script>
     {% block javascripts %}{% endblock %}
 

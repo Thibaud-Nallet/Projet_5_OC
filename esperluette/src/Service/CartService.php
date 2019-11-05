@@ -48,6 +48,17 @@ class CartService
         return $panierWithData;
     }
 
+    public function getFulLCartBDD(): array
+    {
+        $panier = $this->session->get('panier', []);
+        foreach ($panier as $id) {
+            $commande = [
+                'product' => $this->productShopRepo->find($id)
+            ];
+        }
+        return $commande;
+    }
+
     public function getTotal()
     {
         $total = 0;
